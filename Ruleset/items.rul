@@ -1,0 +1,228 @@
+# Items: Motion scanners & medkits do not require research, and can be bought straight away rather than being manufactured.
+# As mentioned in craft weapons section, craft weapon ammo is expensive.
+# Tank cannon fires HE shells and is a bit more accurate. Still pretty inaccurate due to tank base stats, but the explosiveness helps combat the inaccuracy.
+# Heavy & Auto cannons now have arcing shots, grenade launcher style. Useful to fire over buildings and ensuring shots go off near the target rather than flying into the void.
+# Their AP ammo clip variants were removed.
+# Tank & Heavy laser buffed, usable for sniping high-health targets.
+# Pistols no longer have auto shot, but get cheap (in TUs) snap shots.
+# Tank corpses now recoverable; can be repaired for a fraction of the cost.
+items: 
+  - type: STR_MOTION_SCANNER
+    costBuy: 11400 
+    costSell: 9500
+  - type: STR_MEDI_KIT
+    costBuy: 14200
+    costSell: 11200
+  - type: STR_STINGRAY_MISSILES
+    costBuy: 51300
+    costSell: 44300
+  - type: STR_AVALANCHE_MISSILES
+    transferTime: 96
+    costBuy: 313000
+    costSell: 295000
+  - type: STR_CANNON_ROUNDS_X50
+    transferTime: 48
+    costBuy: 39300
+    costSell: 31100
+  - type: STR_PLASMA_BEAM_ROUNDS
+    size: 0.02
+    costSell: 21400
+    transferTime: 48
+    clipSize: 1
+    listOrder: 1001
+  - type: STR_TANK_CANNON
+    accuracyAimed: 120
+    accuracySnap: 60
+    tuAimed: 80
+    tuSnap: 40
+  - type: STR_HWP_CANNON_SHELLS
+    damageType: 3
+    hitAnimation: 0
+    power: 60
+    clipSize: 15
+  - type: STR_HEAVY_CANNON
+    arcingShot: true
+    accuracySnap: 60
+    accuracyAimed: 100
+    tuSnap: 30
+    tuAimed: 70
+  - type: STR_AUTO_CANNON
+    arcingShot: true
+    accuracyAuto: 30
+    accuracySnap: 50
+    accuracyAimed: 80
+    tuAuto: 40
+    tuSnap: 30
+    tuAimed: 70
+  - type: STR_HC_HE_AMMO
+    power: 60
+  - type: STR_AC_HE_AMMO
+    power: 42
+  - type: STR_TANK_LASER_CANNON
+    accuracyAimed: 125
+    accuracySnap: 95
+    tuSnap: 40
+  - type: STR_HEAVY_LASER
+    accuracyAimed: 115
+    accuracySnap: 75
+  - type: STR_PISTOL
+    accuracySnap: 60
+    accuracyAimed: 78
+    tuSnap: 18
+    tuAimed: 30
+  - type: STR_LASER_PISTOL
+    accuracyAuto: 0
+    accuracySnap: 40
+    accuracyAimed: 68
+    tuAuto: 0
+    tuSnap: 18
+    tuAimed: 30
+  - type: STR_PLASMA_PISTOL
+    accuracyAuto: 0
+    accuracySnap: 65
+    accuracyAimed: 85
+    tuAuto: 0
+    tuSnap: 18
+    tuAimed: 30
+  - type: HOVERTANK_CORPSE_1
+    size: 6
+    transferTime: 96
+    costSell: 180000
+    recover: true
+  - type: TANK_CORPSE_1
+    size: 6
+    transferTime: 96
+    costSell: 90000
+    recover: true
+
+
+
+#items:
+#  - type: STR_HEAVY_PLASMA
+#    requires:
+#      - STR_HEAVY_PLASMA
+#    size: 0.3
+#    costSell: 70000
+#    weight: 12
+#    bigSprite: 30
+#    floorSprite: 29
+#    handSprite: 40
+#    bulletSprite: 8
+#    fireSound: 18
+#    compatibleAmmo:
+#      - STR_HEAVY_PLASMA_CLIP
+#    accuracyAuto: 30
+#    accuracySnap: 60
+#    accuracyAimed: 95
+#    tuAuto: 35
+#    tuSnap: 30
+#    tuAimed: 60
+#    battleType: 1
+#    twoHanded: true
+#    invWidth: 2
+#    invHeight: 3
+#    recoveryPoints: 5
+#    armor: 50
+#  - type: STR_HEAVY_PLASMA_CLIP
+#    requires:
+#      - STR_HEAVY_PLASMA_CLIP
+#    size: 0.2
+#    costSell: 2000
+#    weight: 5
+#    bigSprite: 25
+#    floorSprite: 33
+#    hitSound: 19
+#    hitAnimation: 46
+#    power: 115
+#    damageType: 5
+#    clipSize: 6
+#    battleType: 2
+#    recoveryPoints: 1
+#  - type: STR_PLASMA_RIFLE
+#    requires:
+#      - STR_PLASMA_RIFLE
+#    size: 0.2
+#    costSell: 55000
+#    weight: 9
+#    bigSprite: 31
+#    floorSprite: 30
+#    handSprite: 48
+#    bulletSprite: 8
+#    fireSound: 18
+#    compatibleAmmo:
+#      - STR_PLASMA_RIFLE_CLIP
+#    accuracyAuto: 55
+#    accuracySnap: 86
+#    accuracyAimed: 100
+#    tuAuto: 36
+#    tuSnap: 30
+#    tuAimed: 60
+#    battleType: 1
+#    twoHanded: true
+#    invWidth: 1
+#    invHeight: 3
+#    recoveryPoints: 4
+#    armor: 50
+#  - type: STR_PLASMA_RIFLE_CLIP
+#    requires:
+#      - STR_PLASMA_RIFLE_CLIP
+#    size: 0.1
+#    costSell: 1500
+#    weight: 4
+#    bigSprite: 41
+#    floorSprite: 33
+#    hitSound: 19
+#    hitAnimation: 46
+#    power: 80
+#    damageType: 5
+#    clipSize: 12
+#    battleType: 2
+#    recoveryPoints: 1
+#  - type: STR_PLASMA_PISTOL
+#    requires:
+#      - STR_PLASMA_PISTOL
+#    size: 0.1
+#    costSell: 30000
+#    weight: 4
+#    bigSprite: 32
+#    floorSprite: 31
+#    handSprite: 104
+#    bulletSprite: 8
+#    fireSound: 18
+#    compatibleAmmo:
+#      - STR_PLASMA_PISTOL_CLIP
+#    accuracyAuto: 50
+#    accuracySnap: 65
+#    accuracyAimed: 85
+#    tuAuto: 30
+#    tuSnap: 30
+#    tuAimed: 60
+#    battleType: 1
+#    invWidth: 1
+#    invHeight: 2
+#    recoveryPoints: 3
+#    armor: 45
+#  - type: STR_PLASMA_PISTOL_CLIP
+#    requires:
+#      - STR_PLASMA_PISTOL_CLIP
+#    size: 0.1
+#    costSell: 1000
+#    weight: 3
+#    bigSprite: 34
+#    floorSprite: 33
+#    hitSound: 19
+#    hitAnimation: 46
+#    power: 52
+#    damageType: 5
+#    clipSize: 10
+#    battleType: 2
+#    recoveryPoints: 1
+## Special Psi Weapon for Aliens.
+## Usage of this is hard-coded.
+## DO NOT DELETE!
+#  - type: ALIEN_PSI_WEAPON
+#    hitSound: 36
+#    battleType: 9
+#    tuUse: 25
+#    flatRate: true
+#    recover: false

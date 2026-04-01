@@ -1,0 +1,77 @@
+
+
+# Craft weapons: Range used to be the most important stat, as it allowed you to intercept most UFOs with your starting Avalanches without any risk of taking damage.
+# To get rid of this problem, UFOs all have the same range (65) now. 
+# As a result, all stats are equally important and help you take down UFOs faster, and by extension take less return fire.
+# Most weapons were buffed to fit this new paradigm.
+# Missiles are way more expensive. Stingrays help down crafts quickly, while Avalanches are nukes; use sparingly.
+# Basic cannon got a little buffed, but is mainly useful because it's much cheaper than missiles.
+# Laser cannon ditto; infinite free ammo is a big deal now.
+# Plasma cannon requires expensive manufactured ammo, and behaves more like the battlefield weapons than a laser.
+# Fusion launchers are the only weapon that outrange UFOs, but are very hard to get. They are also the only manufactured equipment that makes a profit!
+
+
+craftWeapons:
+  - type: STR_STINGRAY
+    range: 60
+    damage: 100
+    accuracy: 100
+    ammoMax: 3
+    reloadCautious: 18
+    reloadStandard: 18
+    reloadAggressive: 18
+    projectileSpeed: 30
+  - type: STR_AVALANCHE
+    range: 60
+    damage: 400
+    accuracy: 100
+    ammoMax: 2
+    reloadCautious: 24
+    reloadStandard: 24
+    reloadAggressive: 24
+    projectileSpeed: 30
+  - type: STR_CANNON_UC
+    range: 20
+    accuracy: 33
+    reloadCautious: 2
+    reloadStandard: 2
+    reloadAggressive: 2
+    projectileSpeed: 40
+  - type: STR_LASER_CANNON_UC
+    range: 30
+    damage: 80
+    accuracy: 80
+    reloadCautious: 8
+    reloadStandard: 8
+    reloadAggressive: 8
+  - type: STR_PLASMA_BEAM_UC
+    damage: 140
+    range: 40
+    accuracy: 70
+    ammoMax: 50
+    rearmRate: 10
+    clip: STR_PLASMA_BEAM_ROUNDS
+  - type: STR_FUSION_BALL_UC
+    range: 68
+    ammoMax: 6
+    damage: 800
+    reloadCautious: 12
+    reloadStandard: 12
+    reloadAggressive: 12
+    projectileSpeed: 30
+    
+# Crafts: Lighting slightly buffed, but still inconvenient. Firestorm is now the fastest craft, giving it a late-game role for intercepting Battleships etc.
+# Avenger remains overall best.
+crafts:
+  - type: STR_INTERCEPTOR
+    damageMax: 100
+  - type: STR_LIGHTNING
+    fuelMax: 40
+    speedMax: 3500
+  - type: STR_FIRESTORM
+    fuelMax: 30
+    speedMax: 5400
+  - type: STR_AVENGER
+    speedMax: 4200
+    
+    

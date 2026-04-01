@@ -1,0 +1,110 @@
+
+# Manufacturing: The ability to get infinite money through manufacturing broke the geoscape balance.
+# To fix this, things that used to yield a net profit to manufacture no longer do unless you're willing to indirectly sell Elerium.
+# Alien Alloys are the closest to breaking even; make & sell that with your engineers if they don't have anything better to do, so they don't just sit idle.
+# Plasma & laser equipment now require Elerium.
+# Motion scanners and medkits are bought and sold instead of manufactured.
+# Fusion launchers still turn a profit, but they're gated behind interrogating an Ethereal Commander. Good luck!
+# Tanks can now be rebuilt for a fraction of the cost if the wreck is recovered.
+# Plasma cannons (for interception) now require Plasma Beam Ammo to be manufactured. Produced in batches of 10, like how basic cannon ammo is bought in batches of 50.
+manufacture:
+  - delete: STR_MOTION_SCANNER
+  - delete: STR_MEDI_KIT
+  - name: STR_PLASMA_PISTOL
+    requiredItems:
+      STR_ELERIUM_115: 1
+      STR_ALIEN_ALLOYS: 1
+  - name: STR_PLASMA_RIFLE
+    requiredItems:
+      STR_ELERIUM_115: 2
+      STR_ALIEN_ALLOYS: 2
+  - name: STR_HEAVY_PLASMA
+    requiredItems:
+      STR_ELERIUM_115: 3
+      STR_ALIEN_ALLOYS: 3
+  - name: STR_SMALL_LAUNCHER
+    requiredItems:
+      STR_ELERIUM_115: 2
+      STR_ALIEN_ALLOYS: 2
+  - name: STR_LASER_PISTOL
+    requiredItems:
+      STR_ELERIUM_115: 1
+  - name: STR_LASER_RIFLE
+    requiredItems:
+      STR_ELERIUM_115: 2
+  - name: STR_HEAVY_LASER
+    requiredItems:
+      STR_ELERIUM_115: 5
+  - name: STR_TANK_LASER_CANNON
+    requiredItems:
+      STR_ELERIUM_115: 8
+  - name: STR_LASER_CANNON
+    requiredItems:
+      STR_ELERIUM_115: 15
+  - name: STR_TANK_CANNON_REBUILD
+    category: STR_HEAVY_WEAPONS_PLATFORM
+    space: 25
+    time: 800
+    cost: 49000
+    requiredItems:
+      TANK_CORPSE_1: 1
+    producedItems:
+      STR_TANK_CANNON: 1
+  - name: STR_TANK_ROCKET_LAUNCHER_REBUILD
+    category: STR_HEAVY_WEAPONS_PLATFORM
+    space: 25
+    time: 800
+    cost: 52000
+    requiredItems:
+      TANK_CORPSE_1: 1
+    producedItems:
+      STR_TANK_ROCKET_LAUNCHER: 1
+  - name: STR_TANK_LASER_CANNON_REBUILD
+    category: STR_HEAVY_WEAPONS_PLATFORM
+    requires:
+      - STR_LASER_CANNON
+    space: 25
+    time: 800
+    cost: 102000
+    requiredItems:
+      TANK_CORPSE_1: 1
+      STR_ELERIUM_115: 8
+    producedItems:
+      STR_TANK_LASER_CANNON: 1
+  - name: STR_HOVERTANK_PLASMA_REBUILD
+    requires:
+      - STR_PLASMA_CANNON
+      - STR_NEW_FIGHTER_CRAFT
+    space: 30
+    time: 800
+    cost: 185000
+    requiredItems:
+      HOVERTANK_CORPSE_1: 1
+      STR_ALIEN_ALLOYS: 2
+      STR_ELERIUM_115: 10
+    producedItems:
+      STR_HOVERTANK_PLASMA: 1
+  - name: STR_HOVERTANK_LAUNCHER_REBUILD
+    requires:
+      - STR_FUSION_MISSILE
+      - STR_NEW_FIGHTER_CRAFT
+    space: 30
+    time: 800
+    cost: 196000
+    requiredItems:
+      HOVERTANK_CORPSE_1: 1
+      STR_ALIEN_ALLOYS: 3
+      STR_ELERIUM_115: 8
+    producedItems:
+      STR_HOVERTANK_LAUNCHER: 1
+  - name: STR_PLASMA_BEAM_ROUNDS
+    category: STR_CRAFT_AMMUNITION
+    space: 1
+    time: 30
+    cost: 8000
+    requires:
+      - STR_PLASMA_CANNON
+    requiredItems:
+      STR_ELERIUM_115: 1
+    producedItems: 
+      STR_PLASMA_BEAM_ROUNDS: 1

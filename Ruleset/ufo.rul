@@ -1,0 +1,52 @@
+
+# UFOs: Some fiddling with balance, but the big one is that they all have the same range (65) now, changing the air game drastically; see the Craft weapons section for more details.
+ufos:
+  - type: STR_SMALL_SCOUT
+    damageMax: 50
+    speedMax: 2200
+    power: 0
+    range: 0
+    reload: 56
+  - type: STR_MEDIUM_SCOUT
+    damageMax: 200
+    speedMax: 2400
+    power: 20
+    range: 65
+    reload: 56
+  - type: STR_LARGE_SCOUT
+    damageMax: 350
+    speedMax: 2700
+    power: 30
+    range: 65
+    reload: 48
+  - type: STR_ABDUCTOR
+    damageMax: 500
+    speedMax: 3400
+    power: 30
+    range: 65
+    reload: 32
+  - type: STR_HARVESTER
+    damageMax: 500
+    speedMax: 3100
+    power: 30
+    range: 65
+    reload: 32
+  - type: STR_SUPPLY_SHIP
+    damageMax: 2200
+    speedMax: 2800
+    power: 40
+    range: 65
+    reload: 24
+  - type: STR_TERROR_SHIP
+    damageMax: 1200
+    speedMax: 4100
+    power: 80
+    range: 65
+    reload: 24
+  - type: STR_BATTLESHIP
+    damageMax: 3000
+    speedMax: 5000
+    accel: 6
+    power: 140
+    range: 65
+    reload: 24

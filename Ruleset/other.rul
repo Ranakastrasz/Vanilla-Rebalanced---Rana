@@ -1,0 +1,98 @@
+# Vanilla Rebalanced
+# Rebalances existing content without adding anything new.
+
+# Air combat requires hard choices, research relies more on interrogations, manufacturing can't yield infinite money, infantry weapons all have a clear role, etc. 
+
+# Starting Base equipment: Removed AP ammo clips for starting heavy/auto cannon, since those were removed.
+# Changed interceptor loadouts so they don't start with too many missiles.
+# Start with less missiles overall, since they're expensive now.
+startingBase:
+  crafts:
+    - type: STR_SKYRANGER
+      id: 1
+      fuel: 1500
+      damage: 0
+      items:
+        STR_HEAVY_CANNON: 2
+        STR_HC_HE_AMMO: 2
+        STR_HC_I_AMMO: 2
+        STR_PISTOL: 2
+        STR_PISTOL_CLIP: 2
+        STR_RIFLE: 6
+        STR_RIFLE_CLIP: 12
+        STR_GRENADE: 8
+      status: STR_READY
+    - type: STR_INTERCEPTOR
+      id: 1
+      fuel: 1000
+      damage: 0
+      weapons:
+        - type: STR_STINGRAY
+          ammo: 3
+        - type: STR_CANNON_UC
+          ammo: 200
+      status: STR_READY
+    - type: STR_INTERCEPTOR
+      id: 2
+      fuel: 1000
+      damage: 0
+      weapons:
+        - type: STR_STINGRAY
+          ammo: 3
+        - type: STR_CANNON_UC
+          ammo: 200
+  items:
+    STR_STINGRAY_LAUNCHER: 1
+    STR_STINGRAY_MISSILES: 15
+    STR_AVALANCHE_LAUNCHER: 1
+    STR_AVALANCHE_MISSILES: 3
+    STR_CANNON: 2
+    STR_CANNON_ROUNDS_X50: 5
+    STR_PISTOL: 3
+    STR_PISTOL_CLIP: 11
+    STR_RIFLE: 2
+    STR_RIFLE_CLIP: 8
+    STR_AUTO_CANNON: 1
+    STR_AC_HE_AMMO: 4
+    STR_AC_I_AMMO: 2
+    STR_HC_HE_AMMO: 3
+    STR_HC_I_AMMO: 3
+    STR_ROCKET_LAUNCHER: 1
+    STR_SMALL_ROCKET: 4
+    STR_GRENADE: 5
+    STR_SMOKE_GRENADE: 5
+# extra strings: Text for new research entries and misc. stuff like tank wrecks.
+# need to add for the hidden strings too.
+extraStrings: 
+  - type: en-US
+    strings: 
+        STR_ALIEN_EQUIPMENT: Alien Artifacts
+        STR_ALIEN_EQUIPMENT_UFOPAEDIA: Existing footage makes it clear that the invaders' technology is beyond our understanding. We will have to interrogate live captives. Studying a corpse should give us an idea of what will be neccessary to keep them alive.
+        STR_ALIEN_BIOLOGY: Alien Biology
+        STR_ALIEN_BIOLOGY_UFOPAEDIA: Their internal organs are remarkably similar to ours, apart from the obvious tampering. A containment facility capable of keeping them alive should be possible. Autopsies will be needed to determine how best to interrogate each species.
+        STR_LASER_WEAPONS: Alien Weapons
+        STR_LASER_WEAPONS_UFOPAEDIA: Elerium-115 seems to be the source of the alien weapons' power. We could use it ourselves to design powerful handheld laser weaponry, with effectively limitless ammo. Early prototypes may suffer from low accuracy as conventional weapon design principles won't be entirely applicable.
+        STR_PLASMA_BEAM_ROUNDS: Plasma Beam Rounds
+        TANK_CORPSE_1: Tank wreckage
+        HOVERTANK_CORPSE_1: Hovertank wreckage
+        STR_TANK_CANNON_REBUILD: Rebuild Tank/Cannon
+        STR_TANK_ROCKET_LAUNCHER_REBUILD: Rebuild Tank/Rocket Launcher
+        STR_TANK_LASER_CANNON_REBUILD: Rebuild Tank/Laser Cannon
+        STR_HOVERTANK_PLASMA_REBUILD: Rebuild Hovertank/Plasma
+        STR_HOVERTANK_LAUNCHER_REBUILD: Rebuild Hovertank/Launcher
+  - type: ru
+    strings: 
+        STR_ALIEN_EQUIPMENT: Артефакты пришельцев
+        STR_ALIEN_EQUIPMENT_UFOPAEDIA: Существующие видеозаписи ясно показывают, что технологии захватчиков находятся за пределами нашего понимания. Нам придется допрашивать живых пленников. Изучение трупа должно дать нам представление о том, что понадобится, чтобы сохранить им жизнь.
+        STR_ALIEN_BIOLOGY: Биология пришельцев
+        STR_ALIEN_BIOLOGY_UFOPAEDIA: Их внутренние органы удивительно похожи на наши, если не считать явно намеренных изменений. Должен способ их изоляции, в условиях пригодных для поддержания их жизнедеятельности. Потребуются вскрытия, чтобы определить, каковы лучшие способы допроса каждого вида.
+        STR_LASER_WEAPONS: Оружие пришельцев
+        STR_LASER_WEAPONS_UFOPAEDIA: Элерий-115, очевидно, является источником силы оружия пришельцев. Мы могли бы использовать его сами для создания мощного ручного лазерного оружия с практически неограниченными боеприпасами. Ранние прототипы могут страдать от низкой точности, поскольку принципы проектирования обычного оружия не будут полностью применимы.
+        STR_PLASMA_BEAM_ROUNDS: Снаряды к плазменной пушке
+        TANK_CORPSE_1: Обломки танка
+        HOVERTANK_CORPSE_1: Обломки ховертанка
+        STR_TANK_CANNON_REBUILD: Восстановить танк/пушку
+        STR_TANK_ROCKET_LAUNCHER_REBUILD: Восстановить танк/ракетную установку
+        STR_TANK_LASER_CANNON_REBUILD: Восстановить танк/лазерную пушку
+        STR_HOVERTANK_PLASMA_REBUILD: Восстановить плазменный ховертанк
+        STR_HOVERTANK_LAUNCHER_REBUILD: Восстановить бластерный ховертанк

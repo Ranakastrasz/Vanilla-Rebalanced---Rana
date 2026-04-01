@@ -1,0 +1,514 @@
+
+# Research: Some of this is mentioned in previous sections, but whatever.
+# Motion scanners & medkits do not require research, and can be bought straight away rather than being manufactured.
+# Two new research topics: Alien Artifacts and Alien Biology. They mainly serve to explain how the new research system works.
+# Before you can start researching alien equipment, you need to interrogate aliens. 
+# Before you can interrogate aliens, you need to have completed the autopsy on their race.
+# Before you can build an alien containment, you need to perform any autopsy and then research Alien Biology.
+# The rank and race of an alien determines what they unlock. Terrorist alien races are still useless.
+# Sectoid & floater soldiers unlock research into plasma pistols, snakemen soldiers unlock research into alien grenades and plasma rifles, etc.
+# Engineers and navigators need to be interrogated for UFO components (and allow research into alien missions & UFO types as a bonus).
+# Medics unlock research into the small launcher; highly valuable now that you need more interrogations.
+# "Free techs" like interrogating medics giving insight into a random other aliens have been removed, as they caused the free techs to be researchable despite their dependencies.
+# Laser weapons require Elerium to research and manufacture.
+# Elerium is a simple element and can be researched without interrogations.
+# Blaster Launchers and Psi-Amps are gated behind Ethereal Commanders. Good luck!
+# (But at least you can still get Psi Labs by interrogating Sectoids, and start training/winnowing out psi-weaklings)
+# Hyperwave decoder requires Psi Lab research on top of interrogating a high tier navigator.
+
+# New for Facilities: Alien containment requires research; have to research Alien Biology first, too. 
+facilities:
+  - type: STR_ALIEN_CONTAINMENT
+    requires:
+      - STR_ALIEN_CONTAINMENT
+
+research: 
+  - delete: STR_MOTION_SCANNER
+  - delete: STR_MEDI_KIT
+  - name: STR_ALIEN_EQUIPMENT
+    cost: 50
+    score: 10
+  - name: STR_ALIEN_BIOLOGY
+    cost: 50
+    score: 10
+    dependencies:
+      - STR_SECTOID_AUTOPSY
+      - STR_SNAKEMAN_AUTOPSY
+      - STR_FLOATER_AUTOPSY
+      - STR_MUTON_AUTOPSY
+      - STR_ETHEREAL_AUTOPSY
+      - STR_REAPER_AUTOPSY
+      - STR_CHRYSSALID_AUTOPSY
+      - STR_CELATID_AUTOPSY
+  - name: STR_ALIEN_CONTAINMENT
+    cost: 100
+    score: 10
+    dependencies:
+      - STR_ALIEN_BIOLOGY
+  - name: STR_LASER_WEAPONS
+    dependencies:
+      - STR_ELERIUM_115
+  - name: STR_NAVIGATOR_TIER1
+    dependencies:
+      - STR_SECTOID_NAVIGATOR
+      - STR_FLOATER_NAVIGATOR
+      - STR_SNAKEMAN_NAVIGATOR
+      - STR_MUTON_NAVIGATOR
+  - name: STR_NAVIGATOR_TIER2
+    dependencies:
+      - STR_SNAKEMAN_NAVIGATOR
+      - STR_MUTON_NAVIGATOR
+  - name: STR_NAVIGATOR_TIER3
+    dependencies:
+      - STR_MUTON_NAVIGATOR
+  - name: STR_ENGINEER_TIER1
+    dependencies:
+      - STR_SECTOID_ENGINEER
+      - STR_FLOATER_ENGINEER
+      - STR_SNAKEMAN_ENGINEER
+      - STR_MUTON_ENGINEER
+  - name: STR_ENGINEER_TIER2
+    dependencies:
+      - STR_SNAKEMAN_ENGINEER
+      - STR_MUTON_ENGINEER
+  - name: STR_ENGINEER_TIER3
+    dependencies:
+      - STR_MUTON_ENGINEER
+  - name: STR_SOLDIER_TIER1
+    dependencies:
+      - STR_SECTOID_SOLDIER
+      - STR_FLOATER_SOLDIER
+      - STR_SNAKEMAN_SOLDIER
+      - STR_MUTON_SOLDIER
+      - STR_ETHEREAL_SOLDIER
+  - name: STR_SOLDIER_TIER2
+    dependencies:
+      - STR_SNAKEMAN_SOLDIER
+      - STR_MUTON_SOLDIER
+      - STR_ETHEREAL_SOLDIER
+  - name: STR_SOLDIER_TIER3
+    dependencies:
+      - STR_MUTON_SOLDIER
+      - STR_ETHEREAL_SOLDIER
+  - name: STR_HYPER_WAVE_DECODER
+    dependencies:
+      - STR_UFO_NAVIGATION
+      - STR_PSI_LAB
+      - STR_NAVIGATOR_TIER2
+  - name: STR_ALIEN_GRENADE
+    dependencies:
+      - STR_ELERIUM_115
+      - STR_SOLDIER_TIER2
+  - name: STR_STUN_BOMB
+    dependencies:
+      - STR_ELERIUM_115
+      - STR_SMALL_LAUNCHER
+  - name: STR_SMALL_LAUNCHER
+    dependencies:
+      - STR_SECTOID_MEDIC
+      - STR_FLOATER_MEDIC
+  - name: STR_MIND_PROBE
+    dependencies:
+      - STR_SECTOID_SOLDIER
+      - STR_SECTOID_MEDIC
+      - STR_SECTOID_NAVIGATOR
+      - STR_SECTOID_ENGINEER
+      - STR_SECTOID_LEADER
+      - STR_SECTOID_COMMANDER
+      - STR_ETHEREAL_SOLDIER
+      - STR_ETHEREAL_LEADER
+      - STR_ETHEREAL_COMMANDER
+  - name: STR_PLASMA_PISTOL_CLIP
+    cost: 100
+    dependencies:
+      - STR_ELERIUM_115
+      - STR_PLASMA_PISTOL
+  - name: STR_PLASMA_PISTOL
+    cost: 200
+    dependencies:
+      - STR_SOLDIER_TIER1
+  - name: STR_PLASMA_RIFLE_CLIP
+    cost: 150
+    dependencies:
+      - STR_ELERIUM_115
+      - STR_PLASMA_RIFLE
+  - name: STR_PLASMA_RIFLE
+    cost: 350
+    dependencies:
+      - STR_SOLDIER_TIER2
+  - name: STR_HEAVY_PLASMA_CLIP
+    cost: 300
+    dependencies:
+      - STR_ELERIUM_115
+      - STR_HEAVY_PLASMA
+  - name: STR_HEAVY_PLASMA
+    cost: 700
+    dependencies:
+      - STR_SOLDIER_TIER3
+  - name: STR_BLASTER_BOMB
+    dependencies:
+      - STR_BLASTER_LAUNCHER
+  - name: STR_BLASTER_LAUNCHER
+    dependencies:
+      - STR_ETHEREAL_COMMANDER
+  - name: STR_PSI_AMP
+    dependencies:
+      - STR_ETHEREAL_COMMANDER
+      - STR_PSI_LAB
+  - name: STR_ALIEN_ALLOYS
+    dependencies:
+      - STR_ENGINEER_TIER1
+  - name: STR_UFO_POWER_SOURCE
+    dependencies:
+      - STR_ENGINEER_TIER1
+  - name: STR_UFO_NAVIGATION
+    dependencies:
+      - STR_NAVIGATOR_TIER1
+      - STR_ENGINEER_TIER1
+  - name: STR_UFO_CONSTRUCTION
+    dependencies:
+      - STR_UFO_POWER_SOURCE
+      - STR_UFO_NAVIGATION
+      - STR_ELERIUM_115
+      - STR_ALIEN_ALLOYS
+  - name: STR_NEW_FIGHTER_TRANSPORTER
+    dependencies:
+      - STR_UFO_CONSTRUCTION
+  - name: STR_NEW_FIGHTER_CRAFT
+    dependencies:
+      - STR_NEW_FIGHTER_TRANSPORTER
+      - STR_NAVIGATOR_TIER2
+      - STR_ENGINEER_TIER2
+  - name: STR_ULTIMATE_CRAFT
+    dependencies:
+      - STR_NEW_FIGHTER_CRAFT
+      - STR_NAVIGATOR_TIER3
+      - STR_ENGINEER_TIER3
+  - name: STR_SECTOID
+    unlocks:
+      - STR_ALIEN_ORIGINS
+  - name: STR_SECTOID_AUTOPSY
+    unlocks:
+      - STR_ALIEN_BIOLOGY
+  - name: STR_SECTOID_SOLDIER
+    dependencies:
+      - STR_SECTOID_AUTOPSY
+    unlocks:
+      - STR_MIND_PROBE
+      - STR_SOLDIER_TIER1
+  - name: STR_SECTOID_ENGINEER
+    getOneFree: []
+    dependencies:
+      - STR_SECTOID_AUTOPSY
+    unlocks:
+      - STR_MIND_PROBE
+      - STR_ENGINEER_TIER1
+  - name: STR_SECTOID_MEDIC
+    getOneFree: []
+    dependencies:
+      - STR_SECTOID_AUTOPSY
+    unlocks:
+      - STR_MIND_PROBE
+      - STR_SMALL_LAUNCHER
+  - name: STR_SECTOID_NAVIGATOR
+    getOneFree: []
+    dependencies:
+      - STR_SECTOID_AUTOPSY
+    unlocks:
+      - STR_MIND_PROBE
+      - STR_NAVIGATOR_TIER1
+  - name: STR_SECTOID_LEADER
+    dependencies:
+      - STR_SECTOID_AUTOPSY
+    unlocks:
+      - STR_LEADER_PLUS
+      - STR_MIND_PROBE
+      - STR_PSI_LAB
+  - name: STR_SECTOID_COMMANDER
+    dependencies:
+      - STR_SECTOID_AUTOPSY
+    unlocks:
+      - STR_LEADER_PLUS
+      - STR_COMMANDER_PLUS
+      - STR_MIND_PROBE
+      - STR_PSI_LAB
+  - name: STR_CYBERDISC_TERRORIST
+    dependencies:
+      - STR_CYBERDISC_AUTOPSY
+  - name: STR_FLOATER_AUTOPSY
+    unlocks:
+      - STR_ALIEN_BIOLOGY
+  - name: STR_FLOATER
+    unlocks:
+      - STR_ALIEN_ORIGINS
+  - name: STR_FLOATER_SOLDIER
+    dependencies:
+      - STR_FLOATER_AUTOPSY
+    unlocks:
+      - STR_SOLDIER_TIER1
+  - name: STR_FLOATER_ENGINEER
+    getOneFree: []
+    dependencies:
+      - STR_FLOATER_AUTOPSY
+    unlocks:
+      - STR_ENGINEER_TIER1
+  - name: STR_FLOATER_MEDIC
+    getOneFree: []
+    dependencies:
+      - STR_FLOATER_AUTOPSY
+    unlocks:
+      - STR_SMALL_LAUNCHER
+  - name: STR_FLOATER_NAVIGATOR
+    getOneFree: []
+    dependencies:
+      - STR_FLOATER_AUTOPSY
+    unlocks:
+      - STR_NAVIGATOR_TIER1
+  - name: STR_FLOATER_LEADER
+    dependencies:
+      - STR_FLOATER_AUTOPSY
+    unlocks:
+      - STR_LEADER_PLUS
+  - name: STR_FLOATER_COMMANDER
+    dependencies:
+      - STR_FLOATER_AUTOPSY
+    unlocks:
+      - STR_LEADER_PLUS
+      - STR_COMMANDER_PLUS
+  - name: STR_REAPER_AUTOPSY
+    unlocks:
+      - STR_ALIEN_BIOLOGY
+  - name: STR_REAPER_TERRORIST
+    dependencies:
+      - STR_REAPER_AUTOPSY
+    unlocks:
+      - STR_ALIEN_ORIGINS
+  - name: STR_SNAKEMAN_AUTOPSY
+    unlocks:
+      - STR_ALIEN_BIOLOGY
+  - name: STR_SNAKEMAN
+    unlocks:
+      - STR_ALIEN_ORIGINS
+  - name: STR_SNAKEMAN_SOLDIER
+    dependencies:
+      - STR_SNAKEMAN_AUTOPSY
+    unlocks:
+      - STR_SOLDIER_TIER1
+      - STR_SOLDIER_TIER2
+  - name: STR_SNAKEMAN_NAVIGATOR
+    getOneFree: []
+    dependencies:
+      - STR_SNAKEMAN_AUTOPSY
+    unlocks:
+      - STR_NAVIGATOR_TIER1
+      - STR_NAVIGATOR_TIER2
+  - name: STR_SNAKEMAN_LEADER
+    dependencies:
+      - STR_SNAKEMAN_AUTOPSY
+    unlocks:
+      - STR_LEADER_PLUS
+  - name: STR_SNAKEMAN_ENGINEER
+    getOneFree: []
+    dependencies:
+      - STR_SNAKEMAN_AUTOPSY
+    unlocks:
+      - STR_ENGINEER_TIER1
+      - STR_ENGINEER_TIER2
+  - name: STR_SNAKEMAN_COMMANDER
+    dependencies:
+      - STR_SNAKEMAN_AUTOPSY
+    unlocks:
+      - STR_LEADER_PLUS
+      - STR_COMMANDER_PLUS
+  - name: STR_CHRYSSALID_AUTOPSY
+    unlocks:
+      - STR_ALIEN_BIOLOGY
+  - name: STR_CHRYSSALID_TERRORIST
+    dependencies:
+      - STR_CHRYSSALID_AUTOPSY
+    unlocks:
+      - STR_ALIEN_ORIGINS
+  - name: STR_MUTON_AUTOPSY
+    unlocks:
+      - STR_ALIEN_BIOLOGY
+  - name: STR_MUTON
+    unlocks:
+      - STR_ALIEN_ORIGINS
+  - name: STR_MUTON_SOLDIER
+    unlocks:
+      - STR_SOLDIER_TIER1
+      - STR_SOLDIER_TIER2
+      - STR_SOLDIER_TIER3
+    dependencies:
+      - STR_MUTON_AUTOPSY
+  - name: STR_MUTON_ENGINEER
+    getOneFree: []
+#    dependencies:
+    unlocks:
+      - STR_ENGINEER_TIER1
+      - STR_ENGINEER_TIER2
+      - STR_ENGINEER_TIER3
+  - name: STR_MUTON_NAVIGATOR
+    getOneFree: []
+    dependencies:
+      - STR_MUTON_AUTOPSY
+    unlocks:
+      - STR_NAVIGATOR_TIER1
+      - STR_NAVIGATOR_TIER2
+      - STR_NAVIGATOR_TIER3
+  - name: STR_SILACOID_TERRORIST
+    dependencies:
+      - STR_SILACOID_AUTOPSY
+    unlocks:
+      - STR_ALIEN_ORIGINS
+  - name: STR_CELATID_TERRORIST
+    dependencies:
+      - STR_CELATID_AUTOPSY
+    unlocks:
+      - STR_ALIEN_ORIGINS
+  - name: STR_ETHEREAL_AUTOPSY
+    unlocks:
+      - STR_ALIEN_BIOLOGY
+  - name: STR_ETHEREAL
+    unlocks:
+      - STR_ALIEN_ORIGINS
+  - name: STR_ETHEREAL_SOLDIER
+    dependencies:
+      - STR_ETHEREAL_AUTOPSY
+    unlocks:
+      - STR_MIND_PROBE
+      - STR_SOLDIER_TIER1
+      - STR_SOLDIER_TIER2
+      - STR_SOLDIER_TIER3
+      - STR_PSI_LAB
+  - name: STR_ETHEREAL_LEADER
+    dependencies:
+      - STR_ETHEREAL_AUTOPSY
+    unlocks:
+      - STR_MIND_PROBE
+      - STR_PSI_LAB
+      - STR_LEADER_PLUS
+  - name: STR_ETHEREAL_COMMANDER
+    dependencies:
+      - STR_ETHEREAL_AUTOPSY
+    unlocks:
+      - STR_MIND_PROBE
+      - STR_PSI_LAB
+      - STR_BLASTER_LAUNCHER
+      - STR_LEADER_PLUS
+      - STR_COMMANDER_PLUS
+  - name: STR_SECTOPOD_TERRORIST
+    dependencies:
+      - STR_SECTOPOD_AUTOPSY
+    unlocks:
+      - STR_ALIEN_ORIGINS
+  - name: STR_ALIEN_RESEARCH
+    needItem: false
+    cost: 50
+    dependencies:
+      - STR_NAVIGATOR_TIER1
+  - name: STR_ALIEN_HARVEST
+    needItem: false
+    cost: 50
+    dependencies:
+      - STR_NAVIGATOR_TIER1
+  - name: STR_ALIEN_ABDUCTION
+    needItem: false
+    cost: 50
+    dependencies:
+      - STR_NAVIGATOR_TIER1
+  - name: STR_ALIEN_INFILTRATION
+    needItem: false
+    cost: 100
+    dependencies:
+      - STR_NAVIGATOR_TIER2
+  - name: STR_ALIEN_TERROR
+    needItem: false
+    cost: 100
+    dependencies:
+      - STR_NAVIGATOR_TIER2
+  - name: STR_ALIEN_BASE
+    needItem: false
+    cost: 150
+    dependencies:
+      - STR_NAVIGATOR_TIER3
+  - name: STR_ALIEN_RETALIATION
+    needItem: false
+    cost: 150
+    dependencies:
+      - STR_NAVIGATOR_TIER3
+  - name: STR_ALIEN_SUPPLY
+    needItem: false
+    cost: 150
+    dependencies:
+      - STR_NAVIGATOR_TIER3
+  - name: STR_SMALL_SCOUT
+    needItem: false
+    cost: 50
+    dependencies:
+      - STR_ENGINEER_TIER1
+  - name: STR_MEDIUM_SCOUT
+    needItem: false
+    cost: 50
+    dependencies:
+      - STR_ENGINEER_TIER1
+  - name: STR_LARGE_SCOUT
+    needItem: false
+    cost: 50
+    dependencies:
+      - STR_ENGINEER_TIER1
+  - name: STR_HARVESTER
+    needItem: false
+    cost: 100
+    dependencies:
+      - STR_ENGINEER_TIER2
+  - name: STR_ABDUCTOR
+    needItem: false
+    cost: 100
+    dependencies:
+      - STR_ENGINEER_TIER2
+  - name: STR_TERROR_SHIP
+    needItem: false
+    cost: 100
+    dependencies:
+      - STR_ENGINEER_TIER2
+  - name: STR_BATTLESHIP
+    needItem: false
+    cost: 150
+    dependencies:
+      - STR_ENGINEER_TIER3
+  - name: STR_SUPPLY_SHIP
+    needItem: false
+    cost: 150
+    dependencies:
+      - STR_ENGINEER_TIER3
+      
+      
+# UFOpaedia: New entries for the new research items Alien Artifacts and Alien Biology, as well as one for Laser Weapons.
+# Medkits and motion scanners available from the start without research.
+ufopaedia:
+  - id: STR_ALIEN_EQUIPMENT
+    type_id: 8
+    listOrder: 9910
+    section: STR_ALIEN_RESEARCH_UC
+    requires:
+      - STR_ALIEN_EQUIPMENT
+    text: STR_ALIEN_EQUIPMENT_UFOPAEDIA
+  - id: STR_ALIEN_BIOLOGY
+    type_id: 8
+    listOrder: 9920
+    section: STR_ALIEN_RESEARCH_UC
+    requires:
+      - STR_ALIEN_BIOLOGY
+    text: STR_ALIEN_BIOLOGY_UFOPAEDIA
+  - id: STR_LASER_WEAPONS
+    type_id: 8
+    listOrder: 9930
+    section: STR_ALIEN_RESEARCH_UC
+    requires:
+      - STR_LASER_WEAPONS
+    text: STR_LASER_WEAPONS_UFOPAEDIA
+  - id: STR_MEDI_KIT
+    requires: []
+  - id: STR_MOTION_SCANNER
+    requires: []
