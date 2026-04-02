@@ -4,26 +4,27 @@
 # Heavy & Auto cannons now have arcing shots, grenade launcher style. Useful to fire over buildings and ensuring shots go off near the target rather than flying into the void.
 # Their AP ammo clip variants were removed.
 # Tank & Heavy laser buffed, usable for sniping high-health targets.
-# Pistols no longer have auto shot, but get cheap (in TUs) snap shots.
+# Pistols no longer have auto shot, but get cheap (in TUs) snap and aimed shots.
 # Tank corpses now recoverable; can be repaired for a fraction of the cost.
 items: 
   - type: STR_MOTION_SCANNER
-    costBuy: 11400 
-    costSell: 9500
+    costBuy: 41920 # 34k + 220 hours
+    costSell: 34933
   - type: STR_MEDI_KIT
-    costBuy: 14200
-    costSell: 11200
+    costBuy: 43,120 # 28k + 420 hours
+    costSell: 35933
   - type: STR_STINGRAY_MISSILES
-    costBuy: 51300
+    costBuy: 51300 # 3000
     costSell: 44300
   - type: STR_AVALANCHE_MISSILES
     transferTime: 96
-    costBuy: 313000
+    costBuy: 313000 # 9000
     costSell: 295000
   - type: STR_CANNON_ROUNDS_X50
     transferTime: 48
-    costBuy: 39300
-    costSell: 31100
+    transferTime: 24
+    costBuy: 3930 # 1240
+    costSell: 3110
   - type: STR_PLASMA_BEAM_ROUNDS
     size: 0.02
     costSell: 21400
@@ -31,59 +32,59 @@ items:
     clipSize: 1
     listOrder: 1001
   - type: STR_TANK_CANNON
-    accuracyAimed: 120
-    accuracySnap: 60
-    tuAimed: 80
-    tuSnap: 40
+    accuracyAimed: 120 # 90
+    accuracySnap: 60 # 60
+    tuAimed: 80 # 80
+    tuSnap: 40 # 60
   - type: STR_HWP_CANNON_SHELLS
-    damageType: 3
+    damageType: 3 # HE, Was 1, AP
     hitAnimation: 0
-    power: 60
-    clipSize: 15
+    power: 60 # 60
+    clipSize: 15 # 30
   - type: STR_HEAVY_CANNON
-    arcingShot: true
-    accuracySnap: 60
-    accuracyAimed: 100
-    tuSnap: 30
-    tuAimed: 70
+    arcingShot: true # false
+    accuracySnap: 60 # 60
+    accuracyAimed: 100 # 90
+    tuSnap: 30 # 33
+    tuAimed: 70 # 80
   - type: STR_AUTO_CANNON
-    arcingShot: true
-    accuracyAuto: 30
-    accuracySnap: 50
-    accuracyAimed: 80
-    tuAuto: 40
-    tuSnap: 30
-    tuAimed: 70
+    arcingShot: true # false
+    accuracyAuto: 30 # 32
+    accuracySnap: 50 # 56
+    accuracyAimed: 80 # 82
+    tuAuto: 40 # 40
+    tuSnap: 30 # 33
+    tuAimed: 70 # 80
   - type: STR_HC_HE_AMMO
-    power: 60
+    power: 60 # 52
   - type: STR_AC_HE_AMMO
-    power: 42
+    power: 42 # 44
   - type: STR_TANK_LASER_CANNON
-    accuracyAimed: 125
-    accuracySnap: 95
-    tuSnap: 40
+    accuracyAimed: 125 # 85
+    accuracySnap: 95 # 50
+    tuSnap: 40 # 33
   - type: STR_HEAVY_LASER
-    accuracyAimed: 115
-    accuracySnap: 75
+    accuracyAimed: 115  # 84
+    accuracySnap: 75    # 50
   - type: STR_PISTOL
-    accuracySnap: 60
-    accuracyAimed: 78
-    tuSnap: 18
-    tuAimed: 30
+    accuracySnap: 60    # 60
+    accuracyAimed: 78   # 76
+    tuSnap: 18    # 18
+    tuAimed: 30   # 30
   - type: STR_LASER_PISTOL
-    accuracyAuto: 0
-    accuracySnap: 40
-    accuracyAimed: 68
-    tuAuto: 0
-    tuSnap: 18
-    tuAimed: 30
+    accuracyAuto: 0   # 28
+    accuracySnap: 40  # 40
+    accuracyAimed: 68 # 68
+    tuAuto: 0     # 25
+    tuSnap: 18    # 20
+    tuAimed: 30   # 55
   - type: STR_PLASMA_PISTOL
-    accuracyAuto: 0
-    accuracySnap: 65
-    accuracyAimed: 85
-    tuAuto: 0
-    tuSnap: 18
-    tuAimed: 30
+    accuracyAuto: 0   # 30
+    accuracySnap: 65  # 30
+    accuracyAimed: 85 # 60
+    tuAuto: 0     # 50
+    tuSnap: 18    # 65
+    tuAimed: 30   # 85
   - type: HOVERTANK_CORPSE_1
     size: 6
     transferTime: 96
@@ -95,6 +96,36 @@ items:
     costSell: 90000
     recover: true
 
+# Original
+# Heavy Plasma : Weight from 8 to 12 - Clip : Weight from 3 to 5; Ammo from 35 to 6
+# Plasma Rifle : Weight from 5 to 9 - Clip : Weight from 3 to 4; Ammo from 28 to 12
+# Plasma Pistol: Weight from 3 to 4- Clip : Weight unchanged, still 3; Ammo from 26 to 10
+#
+#Made the Heavy and Rifle slightly lighter (14 to 10 and 10 to 9), and increased the clips capacity (5 to 6 and 8 to 12)
+
+#Also, in the original game, the Heavy Plasma Clips take a lot of space in the General Stores (more than the Heavy Plasma itself, and 3 times more than any other clip.
+#So make the clips smaller, and the HP larger (about the same size than other items that take 3x2 in the soldier's inventory)
+
+#    invWidth: 2
+#    invHeight: 3
+# Heavy Plasma size: 0.3
+# HP Clip size : 0.2
+
+# Pistol. base 5. Rifle base 8. Cannon base 18.
+# Laser weight +2, but -3 from ammo. So -1 total. Hence, laser rifle needs to weigh more, same with heavy laser.
+# Both are lighter than the rifle version, by like half.
+# Also pistol ammo ought to weigh less, so they suck less and are easier to fit into a kit as a secondary.
+# Plus plasma weighs more in general.
+#
+# Pistol        : Weight from 5  ->    - Clip: Weight 3 -> 1; Ammo 12 -> 8
+# Laser Pistol  : Weight from 7  -> 5  - Clip: 
+# Rifle         : Weight from 8  ->    - Clip: Weight 3     ; Ammo 20
+# Laser Rifle   : Weight from 8  -> 10 - Clip: 
+# Cannon        : Weight from 18 ->    - Clip: Weight 6     ; Ammo 6
+# Heavy Laser   : Weight from 18 -> 22 - Clip: 
+# Plasma Pistol : Weight from 3  -> 4  - Clip: Weight 3     ; Ammo from 26 to 10
+# Plasma Rifle  : Weight from 5  -> 9  - Clip: Weight 3 -> 4; Ammo from 28 to 12
+# Heavy Plasma  : Weight from 8  -> 12 - Clip: Weight 3 -> 5; Ammo from 35 to 6
 
 
 #items:

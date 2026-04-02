@@ -6,7 +6,7 @@
 # Motion scanners and medkits are bought and sold instead of manufactured.
 # Fusion launchers still turn a profit, but they're gated behind interrogating an Ethereal Commander. Good luck!
 # Tanks can now be rebuilt for a fraction of the cost if the wreck is recovered.
-# Plasma cannons (for interception) now require Plasma Beam Ammo to be manufactured. Produced in batches of 10, like how basic cannon ammo is bought in batches of 50.
+# Plasma cannons (for interception) now require Plasma Beam Ammo to be manufactured. Produced in batches of 10, like how basic cannon ammo is bought in batches of 50. 
 manufacture:
   - delete: STR_MOTION_SCANNER
   - delete: STR_MEDI_KIT
@@ -107,4 +107,4 @@ manufacture:
     requiredItems:
       STR_ELERIUM_115: 1
     producedItems: 
-      STR_PLASMA_BEAM_ROUNDS: 1
+      STR_PLASMA_BEAM_ROUNDS: 10
