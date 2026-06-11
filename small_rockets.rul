@@ -1,0 +1,11 @@
+items:
+  - type: STR_SMALL_ROCKET
+    costBuy: 1200
+    costSell: 960
+    weight: 8
+    clipSize: 2
+
+extraSprites:
+  - type: BIGOBS.PCK
+    files:
+      16: Resources/small_rockets_alt_bigob.png

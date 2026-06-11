@@ -1,0 +1,15 @@
+Need to integrate Weapon Re-weight fully.
+Breaching charge - Using blastbomb tech and conversion recipe.
+
+All alien ammo researched first, then gun, so you can deconstruct.
+Deconstruction recipes for everything integrated. Including Laser weapons, tanks, Alien components.
+
+Uncertain if removing autoshot from pistols is correct now.
+
+Swap armor on Flying and regular powered armor.
+
+Psi Rework. Alien Loadout Rework. Both seperate first.
+
+Doubt I will include armor chipping here.
+
+Create Credits File.

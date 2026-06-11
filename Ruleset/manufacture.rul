@@ -108,3 +108,93 @@ manufacture:
       STR_ELERIUM_115: 1
     producedItems: 
       STR_PLASMA_BEAM_ROUNDS: 10
+      
+      # Disassembly
+  - name: Plasma Pistol Clip Breakdown
+    category: STR_UFO_COMPONENT
+    requires:
+      - STR_ELERIUM_115
+      - STR_PLASMA_PISTOL_CLIP
+    space: 1
+    time: 60
+    cost: 2000
+    requiredItems:
+      STR_PLASMA_PISTOL_CLIP: 1
+    producedItems:
+      STR_ELERIUM_115: 1
+  - name: Plasma Rifle Clip Breakdown
+    category: STR_UFO_COMPONENT
+    requires:
+      - STR_ELERIUM_115
+      - STR_PLASMA_RIFLE_CLIP
+    space: 2
+    time: 120
+    cost: 4000
+    requiredItems:
+      STR_PLASMA_RIFLE_CLIP: 1
+    producedItems:
+      STR_ELERIUM_115: 2
+  - name: Heavy Plasma Clip Breakdown
+    category: STR_UFO_COMPONENT
+    requires:
+      - STR_ELERIUM_115
+      - STR_HEAVY_PLASMA_CLIP
+    space: 3
+    time: 240
+    cost: 6000
+    requiredItems:
+      STR_HEAVY_PLASMA_CLIP: 1
+    producedItems:
+      STR_ELERIUM_115: 3
+  - name: Blaster Bomb Breakdown
+    category: STR_UFO_COMPONENT
+    requires:
+      - STR_ELERIUM_115
+      - STR_BLASTER_BOMB
+    space: 3
+    time: 240
+    cost: 6000
+    requiredItems:
+      STR_BLASTER_BOMB: 1
+    producedItems:
+      STR_ELERIUM_115: 3
+  - name: Stun Bomb Breakdown
+    category: STR_UFO_COMPONENT
+    requires:
+      - STR_ELERIUM_115
+      - STR_STUN_BOMB
+    space: 1
+    time: 60
+    cost: 2000
+    requiredItems:
+      STR_STUN_BOMB: 1
+    producedItems:
+      STR_ELERIUM_115: 1
+  - name: Alien Grenade Breakdown
+    category: STR_UFO_COMPONENT
+    requires:
+      - STR_ELERIUM_115
+      - STR_ALIEN_GRENADE
+    space: 1
+    time: 60
+    cost: 2000
+    requiredItems:
+      STR_ALIEN_GRENADE: 1
+    producedItems:
+      STR_ELERIUM_115: 1
+      
+      # Add disassembly for HWP, Laser/Plasma weapons, Power Source(?)
+
+  - name: Breaching Charge
+    category: STR_UFO_COMPONENT
+    requires:
+      - STR_ELERIUM_115
+      - STR_BLASTER_BOMB
+    space: 3
+    time: 240
+    cost: 6000
+    requiredItems:
+      STR_BLASTER_BOMB: 1
+      STR_ALIEN_ALLOYS: 5
+    producedItems:
+      STR_BREACHING_CHARGE: 1

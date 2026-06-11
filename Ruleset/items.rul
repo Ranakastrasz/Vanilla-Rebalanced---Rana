@@ -41,6 +41,10 @@ items:
     hitAnimation: 0
     power: 60 # 60
     clipSize: 15 # 30
+  - type: STR_TANK_LASER_CANNON
+    accuracyAimed: 125 # 85
+    accuracySnap: 95 # 50
+    tuSnap: 40 # 33
   - type: STR_HEAVY_CANNON
     arcingShot: true # false
     accuracySnap: 60 # 60
@@ -55,27 +59,35 @@ items:
     tuAuto: 40 # 40
     tuSnap: 30 # 33
     tuAimed: 70 # 80
+    weight: 18 # 19
   - type: STR_HC_HE_AMMO
     power: 60 # 52
   - type: STR_AC_HE_AMMO
     power: 42 # 44
-  - type: STR_TANK_LASER_CANNON
-    accuracyAimed: 125 # 85
-    accuracySnap: 95 # 50
-    tuSnap: 40 # 33
   - type: STR_HEAVY_LASER
     accuracyAimed: 115  # 84
     accuracySnap: 75    # 50
+    weight: 22 # 18
   - type: STR_PISTOL
     accuracySnap: 60    # 60
     accuracyAimed: 78   # 76
     tuSnap: 18    # 18
     tuAimed: 30   # 30
+    weight: 5 # 4
+    
+  - type: STR_SMALL_ROCKET
+    costBuy: 1200
+    costSell: 960
+    weight: 8
+    clipSize: 2
+    
+  - type: STR_PISTOL_CLIP
+    weight: 1 # 3
   - type: STR_LASER_PISTOL
-    accuracyAuto: 0   # 28
+    accuracyAuto: 0  # 28
     accuracySnap: 40  # 40
     accuracyAimed: 68 # 68
-    tuAuto: 0     # 25
+    tuAuto: 0    # 25
     tuSnap: 18    # 20
     tuAimed: 30   # 55
   - type: STR_PLASMA_PISTOL
@@ -85,6 +97,7 @@ items:
     tuAuto: 0     # 50
     tuSnap: 18    # 65
     tuAimed: 30   # 85
+    
   - type: HOVERTANK_CORPSE_1
     size: 6
     transferTime: 96
@@ -95,165 +108,18 @@ items:
     transferTime: 96
     costSell: 90000
     recover: true
-
-# Original
-# Heavy Plasma : Weight from 8 to 12 - Clip : Weight from 3 to 5; Ammo from 35 to 6
-# Plasma Rifle : Weight from 5 to 9 - Clip : Weight from 3 to 4; Ammo from 28 to 12
-# Plasma Pistol: Weight from 3 to 4- Clip : Weight unchanged, still 3; Ammo from 26 to 10
-#
-#Made the Heavy and Rifle slightly lighter (14 to 10 and 10 to 9), and increased the clips capacity (5 to 6 and 8 to 12)
-
-#Also, in the original game, the Heavy Plasma Clips take a lot of space in the General Stores (more than the Heavy Plasma itself, and 3 times more than any other clip.
-#So make the clips smaller, and the HP larger (about the same size than other items that take 3x2 in the soldier's inventory)
-
-#    invWidth: 2
-#    invHeight: 3
-# Heavy Plasma size: 0.3
-# HP Clip size : 0.2
-
-# Pistol. base 5. Rifle base 8. Cannon base 18.
-# Laser weight +2, but -3 from ammo. So -1 total. Hence, laser rifle needs to weigh more, same with heavy laser.
-# Both are lighter than the rifle version, by like half.
-# Also pistol ammo ought to weigh less, so they suck less and are easier to fit into a kit as a secondary.
-# Plus plasma weighs more in general.
-#
-# Pistol        : Weight from 5  ->    - Clip: Weight 3 -> 1; Ammo 12 -> 8
-# Laser Pistol  : Weight from 7  -> 5  - Clip: 
-# Rifle         : Weight from 8  ->    - Clip: Weight 3     ; Ammo 20
-# Laser Rifle   : Weight from 8  -> 10 - Clip: 
-# Cannon        : Weight from 18 ->    - Clip: Weight 6     ; Ammo 6
-# Heavy Laser   : Weight from 18 -> 22 - Clip: 
-# Plasma Pistol : Weight from 3  -> 4  - Clip: Weight 3     ; Ammo from 26 to 10
-# Plasma Rifle  : Weight from 5  -> 9  - Clip: Weight 3 -> 4; Ammo from 28 to 12
-# Heavy Plasma  : Weight from 8  -> 12 - Clip: Weight 3 -> 5; Ammo from 35 to 6
-
-
-#items:
-#  - type: STR_HEAVY_PLASMA
-#    requires:
-#      - STR_HEAVY_PLASMA
-#    size: 0.3
-#    costSell: 70000
-#    weight: 12
-#    bigSprite: 30
-#    floorSprite: 29
-#    handSprite: 40
-#    bulletSprite: 8
-#    fireSound: 18
-#    compatibleAmmo:
-#      - STR_HEAVY_PLASMA_CLIP
-#    accuracyAuto: 30
-#    accuracySnap: 60
-#    accuracyAimed: 95
-#    tuAuto: 35
-#    tuSnap: 30
-#    tuAimed: 60
-#    battleType: 1
-#    twoHanded: true
-#    invWidth: 2
-#    invHeight: 3
-#    recoveryPoints: 5
-#    armor: 50
-#  - type: STR_HEAVY_PLASMA_CLIP
-#    requires:
-#      - STR_HEAVY_PLASMA_CLIP
-#    size: 0.2
-#    costSell: 2000
-#    weight: 5
-#    bigSprite: 25
-#    floorSprite: 33
-#    hitSound: 19
-#    hitAnimation: 46
-#    power: 115
-#    damageType: 5
-#    clipSize: 6
-#    battleType: 2
-#    recoveryPoints: 1
-#  - type: STR_PLASMA_RIFLE
-#    requires:
-#      - STR_PLASMA_RIFLE
-#    size: 0.2
-#    costSell: 55000
-#    weight: 9
-#    bigSprite: 31
-#    floorSprite: 30
-#    handSprite: 48
-#    bulletSprite: 8
-#    fireSound: 18
-#    compatibleAmmo:
-#      - STR_PLASMA_RIFLE_CLIP
-#    accuracyAuto: 55
-#    accuracySnap: 86
-#    accuracyAimed: 100
-#    tuAuto: 36
-#    tuSnap: 30
-#    tuAimed: 60
-#    battleType: 1
-#    twoHanded: true
-#    invWidth: 1
-#    invHeight: 3
-#    recoveryPoints: 4
-#    armor: 50
-#  - type: STR_PLASMA_RIFLE_CLIP
-#    requires:
-#      - STR_PLASMA_RIFLE_CLIP
-#    size: 0.1
-#    costSell: 1500
-#    weight: 4
-#    bigSprite: 41
-#    floorSprite: 33
-#    hitSound: 19
-#    hitAnimation: 46
-#    power: 80
-#    damageType: 5
-#    clipSize: 12
-#    battleType: 2
-#    recoveryPoints: 1
-#  - type: STR_PLASMA_PISTOL
-#    requires:
-#      - STR_PLASMA_PISTOL
-#    size: 0.1
-#    costSell: 30000
-#    weight: 4
-#    bigSprite: 32
-#    floorSprite: 31
-#    handSprite: 104
-#    bulletSprite: 8
-#    fireSound: 18
-#    compatibleAmmo:
-#      - STR_PLASMA_PISTOL_CLIP
-#    accuracyAuto: 50
-#    accuracySnap: 65
-#    accuracyAimed: 85
-#    tuAuto: 30
-#    tuSnap: 30
-#    tuAimed: 60
-#    battleType: 1
-#    invWidth: 1
-#    invHeight: 2
-#    recoveryPoints: 3
-#    armor: 45
-#  - type: STR_PLASMA_PISTOL_CLIP
-#    requires:
-#      - STR_PLASMA_PISTOL_CLIP
-#    size: 0.1
-#    costSell: 1000
-#    weight: 3
-#    bigSprite: 34
-#    floorSprite: 33
-#    hitSound: 19
-#    hitAnimation: 46
-#    power: 52
-#    damageType: 5
-#    clipSize: 10
-#    battleType: 2
-#    recoveryPoints: 1
-## Special Psi Weapon for Aliens.
-## Usage of this is hard-coded.
-## DO NOT DELETE!
-#  - type: ALIEN_PSI_WEAPON
-#    hitSound: 36
-#    battleType: 9
-#    tuUse: 25
-#    flatRate: true
-#    recover: false
+    
+  - type: STR_BREECH_CHARGE
+    size: 0.2
+    #costBuy: 2500
+    costSell: 17500
+    weight: 5
+    bigSprite: 36
+    floorSprite: 36
+    power: 200
+    damageType: 3
+    battleType: 4
+    invWidth: 1
+    invHeight: 2
+    blastRadius: 2
+    listorder: 4101
