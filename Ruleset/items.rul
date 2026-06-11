@@ -11,7 +11,7 @@ items:
     costBuy: 41920 # 34k + 220 hours
     costSell: 34933
   - type: STR_MEDI_KIT
-    costBuy: 43,120 # 28k + 420 hours
+    costBuy: 43120 # 28k + 420 hours
     costSell: 35933
     
   - type: STR_STINGRAY_MISSILES
