@@ -12,4 +12,8 @@ Psi Rework. Alien Loadout Rework. Both seperate first.
 
 Doubt I will include armor chipping here.
 
-Create Credits File.
+----
+
+Research - GetOneFree protected. But restrict it to the unimportant/lower Tier stuff.
+I.e. Sectoid engineer unlocks various UFOs, but higher engineer gets higher tier ufos.
+Medics give any but leader/commander of own race, plus own terrorists. Or something.

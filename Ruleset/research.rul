@@ -129,8 +129,8 @@ research:
     cost: 200
     dependencies:
       - STR_SOLDIER_TIER1
-    unlocks:
-      - STR_PLASMA_PISTOL_CLIP
+    #unlocks:
+    #  - STR_PLASMA_PISTOL_CLIP
   - name: STR_PLASMA_RIFLE_CLIP
     cost: 150
     dependencies:
@@ -140,8 +140,8 @@ research:
     cost: 350
     dependencies:
       - STR_SOLDIER_TIER2
-    unlocks:
-      - STR_PLASMA_RIFLE_CLIP
+    #unlocks:
+    #  - STR_PLASMA_RIFLE_CLIP
   - name: STR_HEAVY_PLASMA_CLIP
     cost: 300
     dependencies:
@@ -151,18 +151,17 @@ research:
     cost: 700
     dependencies:
       - STR_SOLDIER_TIER3
-    unlocks:
-      - STR_HEAVY_PLASMA_CLIP
+    #unlocks:
+    #  - STR_HEAVY_PLASMA_CLIP
   - name: STR_BLASTER_BOMB
     dependencies:
       - STR_ELERIUM_115
-      - STR_ENGINEER_TIER3
       #- STR_BLASTER_LAUNCHER
   - name: STR_BLASTER_LAUNCHER
     dependencies:
       - STR_ETHEREAL_COMMANDER
-    unlocks:
-      - STR_BLASTER_BOMB
+    #unlocks:
+    #  - STR_BLASTER_BOMB
   - name: STR_PSI_AMP
     dependencies:
       - STR_ETHEREAL_COMMANDER

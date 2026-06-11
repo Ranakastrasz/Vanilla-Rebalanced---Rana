@@ -80,8 +80,8 @@ extraStrings:
         STR_TANK_LASER_CANNON_REBUILD: Rebuild Tank/Laser Cannon
         STR_HOVERTANK_PLASMA_REBUILD: Rebuild Hovertank/Plasma
         STR_HOVERTANK_LAUNCHER_REBUILD: Rebuild Hovertank/Launcher
-        STR_BREECH_CHARGE: UFO Breeching Charge
-        STR_BREECH_CHARGE_UFOPEDIA: A very powerful but low blast radius breeching charge capable of piercing UFO hulls.
+        STR_BREACHING_CHARGE: UFO Breeching Charge
+        STR_BREACHING_CHARGE_UFOPEDIA: A very powerful but low blast radius breeching charge capable of piercing UFO hulls.
   - type: ru
     strings: 
         STR_ALIEN_EQUIPMENT: Артефакты пришельцев

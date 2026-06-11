@@ -13,6 +13,7 @@ items:
   - type: STR_MEDI_KIT
     costBuy: 43,120 # 28k + 420 hours
     costSell: 35933
+    
   - type: STR_STINGRAY_MISSILES
     costBuy: 51300 # 3000
     costSell: 44300
@@ -31,6 +32,7 @@ items:
     transferTime: 48
     clipSize: 1
     listOrder: 1001
+    
   - type: STR_TANK_CANNON
     accuracyAimed: 120 # 90
     accuracySnap: 60 # 60
@@ -41,16 +43,19 @@ items:
     hitAnimation: 0
     power: 60 # 60
     clipSize: 15 # 30
+    
   - type: STR_TANK_LASER_CANNON
     accuracyAimed: 125 # 85
     accuracySnap: 95 # 50
     tuSnap: 40 # 33
+    
   - type: STR_HEAVY_CANNON
     arcingShot: true # false
     accuracySnap: 60 # 60
     accuracyAimed: 100 # 90
     tuSnap: 30 # 33
     tuAimed: 70 # 80
+    
   - type: STR_AUTO_CANNON
     arcingShot: true # false
     accuracyAuto: 30 # 32
@@ -60,20 +65,11 @@ items:
     tuSnap: 30 # 33
     tuAimed: 70 # 80
     weight: 18 # 19
+    
   - type: STR_HC_HE_AMMO
     power: 60 # 52
   - type: STR_AC_HE_AMMO
     power: 42 # 44
-  - type: STR_HEAVY_LASER
-    accuracyAimed: 115  # 84
-    accuracySnap: 75    # 50
-    weight: 22 # 18
-  - type: STR_PISTOL
-    accuracySnap: 60    # 60
-    accuracyAimed: 78   # 76
-    tuSnap: 18    # 18
-    tuAimed: 30   # 30
-    weight: 5 # 4
     
   - type: STR_SMALL_ROCKET
     costBuy: 1200
@@ -81,15 +77,53 @@ items:
     weight: 8
     clipSize: 2
     
+
+  - type: STR_PISTOL
+    #size: 0.1
+    weight: 5 # 4
+#    accuracySnap:  60
+#    accuracyAimed: 78
+#    tuSnap: 18    # 18
+#    tuAimed: 30   # 30
+    
   - type: STR_PISTOL_CLIP
-    weight: 1 # 3
+    weight: 2 # 3
+    
   - type: STR_LASER_PISTOL
+#    size: 0.1
+    weight: 4 # 7
+#    power: 46
     accuracyAuto: 0  # 28
-    accuracySnap: 40  # 40
-    accuracyAimed: 68 # 68
+#    accuracySnap: 40
+#    accuracyAimed: 68
     tuAuto: 0    # 25
     tuSnap: 18    # 20
     tuAimed: 30   # 55
+#    clipSize: -1
+    
+  - type: STR_LASER_RIFLE
+#    size: 0.2
+    weight: 10 # 8
+#    power: 60
+#    accuracyAuto: 46
+#    accuracySnap: 65
+#    accuracyAimed: 100
+#    tuAuto: 34
+#    tuSnap: 25
+#    tuAimed: 50
+#    clipSize: -1
+
+  - type: STR_HEAVY_LASER
+#    size: 0.3
+    weight: 22 # 18
+#    power: 85
+    accuracySnap: 75    # 50
+    accuracyAimed: 115  # 84
+#    tuSnap: 33
+#    tuAimed: 75
+#    clipSize: -1
+    weight: 22 # 18
+    
   - type: STR_PLASMA_PISTOL
     accuracyAuto: 0   # 30
     accuracySnap: 65  # 30
@@ -97,7 +131,42 @@ items:
     tuAuto: 0     # 50
     tuSnap: 18    # 65
     tuAimed: 30   # 85
-    
+  - type: STR_PLASMA_PISTOL_CLIP
+#    size: 0.1
+#    weight: 3
+#    power: 52
+    clipSize: 10 # 26
+
+  - type: STR_PLASMA_RIFLE
+#    size: 0.2
+    weight: 9 # 5
+#    accuracyAuto: 55
+#    accuracySnap: 86
+#    accuracyAimed: 100
+#    tuAuto: 36
+#    tuSnap: 30
+#    tuAimed: 60
+  - type: STR_PLASMA_RIFLE_CLIP
+#    size: 0.1
+    weight: 4 # 3
+#    power: 80
+    clipSize: 12 # 28
+
+
+  - type: STR_HEAVY_PLASMA 
+    size: 0.3 # 0.1
+    weight: 12 # 8
+#    accuracyAuto: 30
+#    accuracySnap: 60
+#    accuracyAimed: 95
+    tuAuto: 0 #35
+    tuSnap: 35 #30
+    #tuAimed: 60
+  - type: STR_HEAVY_PLASMA_CLIP
+    size: 0.2 # 0.3
+    weight: 5 # 3
+#    power: 115
+    clipSize: 6 # 35
   - type: HOVERTANK_CORPSE_1
     size: 6
     transferTime: 96
@@ -109,17 +178,21 @@ items:
     costSell: 90000
     recover: true
     
-  - type: STR_BREECH_CHARGE
+    # Realistically, I would prefer this to be a larger/heavier charge, like high explosives is or worse, with the blaster bomb's radius and damage,
+    # Or something, I dunno. But I mostly changed it so it is a lot closer to a rigged Blaster Bomb.
+  - type: STR_BREACHING_CHARGE
     size: 0.2
     #costBuy: 2500
     costSell: 17500
-    weight: 5
+    weight: 7
     bigSprite: 36
     floorSprite: 36
-    power: 200
+    power: 100
+    damageAlter:
+      ToTile: 1
     damageType: 3
     battleType: 4
     invWidth: 1
     invHeight: 2
-    blastRadius: 2
+    blastRadius: 10
     listorder: 4101
