@@ -9,9 +9,8 @@
 # Sectoid & floater soldiers unlock research into plasma pistols, snakemen soldiers unlock research into alien grenades and plasma rifles, etc.
 # 
 # Engineers and navigators need to be interrogated for UFO components (and allow research into alien missions & UFO types as a bonus).
-# Engineers are required for ammo, albiet at a lower tier, mostly to gate Ammo Disassembly.
 # Medics unlock research into the small launcher; highly valuable now that you need more interrogations.
-# "Free techs" like interrogating medics giving insight into a random other aliens have been removed, as they caused the free techs to be researchable despite their dependencies.
+# "Free techs" like interrogating medics giving insight into a random other aliens have been removed, as they caused the free techs to be researchable despite their dependencies. - Note, Will be revised. Not all of these are gamebreaking, and getFreeTechProtected exists, and does respect dependencies.
 # Laser weapons require Elerium to research and manufacture.
 # Elerium is a simple element and can be researched without interrogations.
 # Blaster Launchers and Psi-Amps are gated behind Ethereal Commanders. Good luck!
@@ -19,6 +18,49 @@
 # Hyperwave decoder requires Psi Lab research on top of interrogating a high tier navigator.
 
 # New for Facilities: Alien containment requires research; have to research Alien Biology first, too. 
+
+# ToDo - Re-add GetOneFree stuff.
+# You need the specific rank of an alien, not the generic lookup to progress, so medics unlocking doesn't matter.
+# And engineers can safely unlock UFO mission/crafts.
+_get_one_free_templates:
+  - &NAVIGATOR_UNLOCK_T1 [STR_ALIEN_RESEARCH, STR_ALIEN_HARVEST, STR_ALIEN_ABDUCTION]
+  - &NAVIGATOR_UNLOCK_T2 [STR_ALIEN_RESEARCH, STR_ALIEN_HARVEST, STR_ALIEN_ABDUCTION, STR_ALIEN_TERROR, STR_ALIEN_RETALIATION]
+  - &NAVIGATOR_UNLOCK_T3 [STR_ALIEN_RESEARCH, STR_ALIEN_HARVEST, STR_ALIEN_ABDUCTION, STR_ALIEN_TERROR, STR_ALIEN_RETALIATION, STR_ALIEN_SUPPLY, STR_ALIEN_INFILTRATION, STR_ALIEN_BASE]
+
+#  - &MEDIC_UNLOCK # Not quite sure. Do we say, <Tier, <= Tier, or what? At minimum, Terrorists must be included.
+#    - STR_SECTOID      # T1
+#    - STR_FLOATER      # T1
+#    - STR_SNAKEMAN     # T2
+#    - STR_MUTON        # T2
+#    - STR_ETHEREAL     # T3
+#    - STR_CHRYSSALID   # T2
+#    - STR_SECTOPOD     # T3
+#    - STR_CYBERDISC    # T1
+#    - STR_SILACOID     # T3 # Which is silly, but it matches.
+#    - STR_CELATID      # T3
+#    - STR_REAPER       # T1
+#    - STR_SECTOID_CORPSE
+#    - STR_FLOATER_CORPSE
+#    - STR_SNAKEMAN_CORPSE
+#    - STR_MUTON_CORPSE
+#    - STR_ETHEREAL_CORPSE
+#    - STR_CHRYSSALID_CORPSE
+#    - STR_SECTOPOD_CORPSE
+#    - STR_CYBERDISC_CORPSE
+#    - STR_SILACOID_CORPSE
+#    - STR_CELATID_CORPSE
+#    - STR_REAPER_CORPSE
+#  - &ENGINEER_UNLOCK
+#    - STR_SMALL_SCOUT  # T1
+#    - STR_MEDIUM_SCOUT # T1
+#    - STR_LARGE_SCOUT  # T1
+#    - STR_HARVESTER    # T2
+#    - STR_ABDUCTOR     # T2
+#    - STR_TERROR_SHIP  # T2
+#    - STR_BATTLESHIP   # T3
+#    - STR_SUPPLY_SHIP  # T3
+
+
 facilities:
   - type: STR_ALIEN_CONTAINMENT
     requires:
@@ -104,7 +146,7 @@ research:
   - name: STR_STUN_BOMB
     dependencies:
       - STR_ELERIUM_115
-      #- STR_SMALL_LAUNCHER
+      - STR_SMALL_LAUNCHER
   - name: STR_SMALL_LAUNCHER
     dependencies:
       - STR_SECTOID_MEDIC
@@ -124,44 +166,44 @@ research:
     cost: 100
     dependencies:
       - STR_ELERIUM_115
-      # - STR_PLASMA_PISTOL
+      - STR_PLASMA_PISTOL
   - name: STR_PLASMA_PISTOL
     cost: 200
     dependencies:
       - STR_SOLDIER_TIER1
-    #unlocks:
-    #  - STR_PLASMA_PISTOL_CLIP
+    unlocks:
+      - STR_PLASMA_PISTOL_CLIP
   - name: STR_PLASMA_RIFLE_CLIP
     cost: 150
     dependencies:
       - STR_ELERIUM_115
-      # - STR_PLASMA_RIFLE
+      - STR_PLASMA_RIFLE
   - name: STR_PLASMA_RIFLE
     cost: 350
     dependencies:
       - STR_SOLDIER_TIER2
-    #unlocks:
-    #  - STR_PLASMA_RIFLE_CLIP
+    unlocks:
+      - STR_PLASMA_RIFLE_CLIP
   - name: STR_HEAVY_PLASMA_CLIP
     cost: 300
     dependencies:
       - STR_ELERIUM_115
-      #- STR_HEAVY_PLASMA
+      - STR_HEAVY_PLASMA
   - name: STR_HEAVY_PLASMA
     cost: 700
     dependencies:
       - STR_SOLDIER_TIER3
-    #unlocks:
-    #  - STR_HEAVY_PLASMA_CLIP
+    unlocks:
+      - STR_HEAVY_PLASMA_CLIP
   - name: STR_BLASTER_BOMB
     dependencies:
       - STR_ELERIUM_115
-      #- STR_BLASTER_LAUNCHER
+      - STR_BLASTER_LAUNCHER
   - name: STR_BLASTER_LAUNCHER
     dependencies:
       - STR_ETHEREAL_COMMANDER
-    #unlocks:
-    #  - STR_BLASTER_BOMB
+    unlocks:
+      - STR_BLASTER_BOMB
   - name: STR_PSI_AMP
     dependencies:
       - STR_ETHEREAL_COMMANDER
@@ -222,7 +264,7 @@ research:
       - STR_MIND_PROBE
       - STR_SMALL_LAUNCHER
   - name: STR_SECTOID_NAVIGATOR
-    getOneFree: []
+    getOneFree: *NAVIGATOR_UNLOCK_T1
     dependencies:
       - STR_SECTOID_AUTOPSY
     unlocks:
@@ -270,7 +312,7 @@ research:
     unlocks:
       - STR_SMALL_LAUNCHER
   - name: STR_FLOATER_NAVIGATOR
-    getOneFree: []
+    getOneFree: *NAVIGATOR_UNLOCK_T1
     dependencies:
       - STR_FLOATER_AUTOPSY
     unlocks:
@@ -307,7 +349,7 @@ research:
       - STR_SOLDIER_TIER1
       - STR_SOLDIER_TIER2
   - name: STR_SNAKEMAN_NAVIGATOR
-    getOneFree: []
+    getOneFree: *NAVIGATOR_UNLOCK_T2
     dependencies:
       - STR_SNAKEMAN_AUTOPSY
     unlocks:
@@ -354,13 +396,12 @@ research:
       - STR_MUTON_AUTOPSY
   - name: STR_MUTON_ENGINEER
     getOneFree: []
-#    dependencies:
     unlocks:
       - STR_ENGINEER_TIER1
       - STR_ENGINEER_TIER2
       - STR_ENGINEER_TIER3
   - name: STR_MUTON_NAVIGATOR
-    getOneFree: []
+    getOneFree: *NAVIGATOR_UNLOCK_T3
     dependencies:
       - STR_MUTON_AUTOPSY
     unlocks:
@@ -413,6 +454,7 @@ research:
       - STR_SECTOPOD_AUTOPSY
     unlocks:
       - STR_ALIEN_ORIGINS
+
   - name: STR_ALIEN_RESEARCH
     needItem: false
     cost: 50
@@ -453,6 +495,7 @@ research:
     cost: 150
     dependencies:
       - STR_NAVIGATOR_TIER3
+
   - name: STR_SMALL_SCOUT
     needItem: false
     cost: 50
@@ -523,6 +566,7 @@ ufopaedia:
     requires: []
   - id: STR_MOTION_SCANNER
     requires: []
+    
   - id: STR_BREECH_CHARGE
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT

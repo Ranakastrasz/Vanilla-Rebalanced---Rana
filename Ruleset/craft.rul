@@ -1,77 +1,200 @@
-
-
 # Craft weapons: Range used to be the most important stat, as it allowed you to intercept most UFOs with your starting Avalanches without any risk of taking damage.
-# To get rid of this problem, UFOs all have the same range (65) now. 
+# To get rid of this problem, UFOs all have the same range (65)
 # As a result, all stats are equally important and help you take down UFOs faster, and by extension take less return fire.
 # Most weapons were buffed to fit this new paradigm.
-# Missiles are way more expensive. Stingrays help down crafts quickly, while Avalanches are nukes; use sparingly.
+# Missiles are perfectly accurate, and way more expensive. Stingrays help down crafts quickly, while Avalanches are nukes; use sparingly.
+
 # Basic cannon got a little buffed, but is mainly useful because it's much cheaper than missiles.
-# Laser cannon ditto; infinite free ammo is a big deal now.
-# Plasma cannon requires expensive manufactured ammo, and behaves more like the battlefield weapons than a laser.
-# Fusion launchers are the only weapon that outrange UFOs, but are very hard to get. They are also the only manufactured equipment that makes a profit!
+# Laser cannon ditto; infinite free ammo is a big deal now. Both fill the same, Get in close role.
+# Plasma cannon requires manufactured ammo, and behaves more like the battlefield weapons than a laser. You will still probably spend more on fuel though.
+# Fusion launchers are the only weapon that outrange UFOs, but are very hard to get.
 
 
 craftWeapons:
-  - type: STR_STINGRAY
-    range: 60
-    damage: 100
-    accuracy: 100
-    ammoMax: 3
-    reloadCautious: 18
-    reloadStandard: 18
-    reloadAggressive: 18
-    projectileSpeed: 30
+  - type: STR_STINGRAY # Basically an old avalanche.
+    range: 60 # 30
+    damage: 100 # 70
+    accuracy: 100 # 70 # Could probably cut this back to 70, and give it 6 ammo again. 
+    ammoMax: 3 # 6
+#    rearmRate: 1
+    reloadCautious: 18 # 64
+    reloadStandard: 18 # 48
+    reloadAggressive: 18 # 32
+    projectileSpeed: 30 # 8
+    
   - type: STR_AVALANCHE
-    range: 60
-    damage: 400
-    accuracy: 100
-    ammoMax: 2
-    reloadCautious: 24
-    reloadStandard: 24
-    reloadAggressive: 24
-    projectileSpeed: 30
+    range: 60 # 60
+    damage: 400 # 100
+    accuracy: 100 # 80 # Not 100% sure this is reasonable, but also, 300k per pop, so 100% seems fair.
+    ammoMax: 2 # 3
+#    rearmRate: 1
+    reloadCautious: 24 # 96
+    reloadStandard: 24 # 72
+    reloadAggressive: 24 # 48
+    projectileSpeed: 30 # 8
   - type: STR_CANNON_UC
-    range: 20
-    accuracy: 33
-    reloadCautious: 2
-    reloadStandard: 2
-    reloadAggressive: 2
-    projectileSpeed: 40
-  - type: STR_LASER_CANNON_UC
-    range: 30
-    damage: 80
-    accuracy: 80
-    reloadCautious: 8
-    reloadStandard: 8
-    reloadAggressive: 8
+    range: 20 # 10 # Seriously, was a piece of crap.
+#    damage: 10
+    accuracy: 33 # 25 # Even now, not the best weapon, but it downs even small scouts pretty safely.
+#    ammoMax: 200
+#    rearmRate: 100
+    reloadCautious: 2 # 4
+    reloadStandard: 2 # 4 
+    reloadAggressive: 2 # 4
+    projectileSpeed: 40 # 8
+  - type: STR_LASER_CANNON_UC # Basically a t2 cannon.
+    range: 30 # 21
+    damage: 80 # 70 # I may want to cut dmg and boost ROF.
+    accuracy: 80 # 35
+#    ammoMax: 100
+#    rearmRate: 50
+    reloadCautious: 8 # 24
+    reloadStandard: 8 # 24
+    reloadAggressive: 8 # 24
   - type: STR_PLASMA_BEAM_UC
-    damage: 140
-    range: 40
-    accuracy: 70
-    ammoMax: 50
-    rearmRate: 10
+#    damage: 140
+    range: 40 # 52
+    accuracy: 70 # 50
+    ammoMax: 50 # 100
+    rearmRate: 10 # 50
+#    reloadCautious: 24
+#    reloadStandard: 24
+#    reloadAggressive: 24
+    
     clip: STR_PLASMA_BEAM_ROUNDS
   - type: STR_FUSION_BALL_UC
-    range: 68
-    ammoMax: 6
-    damage: 800
-    reloadCautious: 12
-    reloadStandard: 12
-    reloadAggressive: 12
-    projectileSpeed: 30
+    range: 68 # 65
+    ammoMax: 6 # 2
+#    rearmRate: 1
+    damage: 800 # 230
+    reloadCautious: 12 # 64
+    reloadStandard: 12 # 48
+    reloadAggressive: 12 # 32
+    projectileSpeed: 30 # 8
     
-# Crafts: Lighting slightly buffed, but still inconvenient. Firestorm is now the fastest craft, giving it a late-game role for intercepting Battleships etc.
+# Crafts: Lighting slightly buffed, but still not the best. But its available significantly before the firestorm. Firestorm is now the fastest craft, giving it a late-game role for intercepting Battleships etc.
+# Skyranger and Intercepter Rent prices down to ~1/3rd. No longer do you buy a shiny new intercepter per month automatically, throwing the old one in the trash. Also, This goes into your missile fund.
 # Avenger remains overall best.
 crafts:
+  - type: STR_SKYRANGER
+#    fuelMax: 1500
+#    damageMax: 150
+#    speedMax: 760
+#    accel: 2
+#    soldiers: 14
+#    vehicles: 3
+#    costBuy: 500000
+    costRent: 165000 #500000
+#    refuelRate: 50
+#    transferTime: 72
+#    score: 200
   - type: STR_INTERCEPTOR
-    damageMax: 100
+#    fuelMax: 1000
+#    damageMax: 100
+#    speedMax: 2100
+#    accel: 3
+#    weapons: 2
+#    costBuy: 600000
+    costRent: 200000 # 600000
+#    forceShowInMonthlyCosts: true
+#    refuelRate: 50
+#    transferTime: 96
+#    score: 250
   - type: STR_LIGHTNING
-    fuelMax: 40
-    speedMax: 3500
+    fuelMax: 40 # 30
+#    damageMax: 800
+    speedMax: 3500 # 3100
+#    accel: 9
+#    weapons: 1
+#    soldiers: 12
+#    refuelItem: STR_ELERIUM_115
+    refuelRate: 10 # 5
+#    score: 300
   - type: STR_FIRESTORM
-    fuelMax: 30
-    speedMax: 5400
+    fuelMax: 30 # 20
+#    damageMax: 500
+    speedMax: 5400 # 4200
+    accel: 12 # 9
+#    weapons: 2
+#    refuelItem: STR_ELERIUM_115
+#    refuelRate: 5
+#    score: 250
   - type: STR_AVENGER
-    speedMax: 4200
+    fuelMax: 60
+#    damageMax: 1200
+    speedMax: 4200 # 5400
+#    accel: 10
+#    weapons: 2
+#    soldiers: 26
+#    vehicles: 4
+#    refuelItem: STR_ELERIUM_115
+#    refuelRate: 5 # Fuel per item, per half hour
+#    score: 400
+#    spacecraft: true
     
     
+ufos:
+  - type: STR_SMALL_SCOUT
+    damageMax: 50
+    speedMax: 2200
+    power: 0
+    range: 0
+    reload: 56
+#    breakOffTime: 200
+#    score: 50
+  - type: STR_MEDIUM_SCOUT
+    damageMax: 200
+    speedMax: 2400
+    power: 20
+    range: 65 # 15
+    reload: 56
+#    score: 75
+#    breakOffTime: 250
+  - type: STR_LARGE_SCOUT
+    damageMax: 350 # 250
+    speedMax: 2700
+    power: 30 # 20
+    range: 65 # 34
+    reload: 48
+#    score: 125
+#    breakOffTime: 300
+  - type: STR_ABDUCTOR
+    damageMax: 500 # 500
+    speedMax: 3400 # 4300
+    power: 30 # 40
+    range: 65 # 20
+    reload: 32
+#    score: 250
+#    breakOffTime: 500
+  - type: STR_HARVESTER
+    damageMax: 500
+    speedMax: 3100 # 4000
+    power: 30 # 40
+    range: 65 # 22
+    reload: 32
+#    score: 250
+#    breakOffTime: 500
+  - type: STR_SUPPLY_SHIP
+    damageMax: 2200
+    speedMax: 2800 # 3200
+    power: 40 # 60
+    range: 65 # 36
+    reload: 24
+#    score: 400
+#    breakOffTime: 3000
+  - type: STR_TERROR_SHIP
+    damageMax: 1200
+    speedMax: 4100 # 4800
+    power: 80 # 120
+    range: 65 # 42
+    reload: 24
+#    score: 700
+#    breakOffTime: 4000
+  - type: STR_BATTLESHIP
+    damageMax: 3000
+    speedMax: 5000
+    power: 140
+    range: 65
+    reload: 24
+#    score: 700
+#    breakOffTime: 4000
