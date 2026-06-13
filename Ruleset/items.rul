@@ -28,7 +28,7 @@ items:
     costSell: 3110
   - type: STR_PLASMA_BEAM_ROUNDS
     size: 0.02
-    costSell: 21400
+    costSell: 1400
     transferTime: 48
     clipSize: 1
     listOrder: 1001
@@ -55,6 +55,9 @@ items:
     accuracyAimed: 100 # 90
     tuSnap: 30 # 33
     tuAimed: 70 # 80
+    compatibleAmmo:
+      - STR_HC_HE_AMMO
+      - STR_HC_I_AMMO
     
   - type: STR_AUTO_CANNON
     arcingShot: true # false
@@ -65,11 +68,17 @@ items:
     tuSnap: 30 # 33
     tuAimed: 70 # 80
     weight: 18 # 19
+    compatibleAmmo:
+      - STR_AC_HE_AMMO
+      - STR_AC_I_AMMO
     
   - type: STR_HC_HE_AMMO
     power: 60 # 52
   - type: STR_AC_HE_AMMO
     power: 42 # 44
+    
+  - delete: STR_HC_AP_AMMO # As a arcing weapon, there isn't really much kinetic energy for these to work.
+  - delete: STR_AC_AP_AMMO
     
   - type: STR_SMALL_ROCKET # Kinda a replacement for direct fire HC Explosive. Can snap twice in a turn.
     costBuy: 1200 # 600
@@ -160,7 +169,7 @@ items:
 #    accuracyAuto: 30
 #    accuracySnap: 60
 #    accuracyAimed: 95
-    tuAuto: 0 #35 # Autofire removed mostly to make it a specilized weapon, but also because aliens have 18 ammo at best, and burn through that way too fast otherwise.
+    tuAuto: 0 #35 # Autofire removed mostly to make it a specialized weapon, but also because with 6(18) ammo instead of 35(105), aliens burn though it a bit too fast. Its a slightly faster Sonic cannon from TFTD I suppose.
     tuSnap: 35 #30
     #tuAimed: 60
   - type: STR_HEAVY_PLASMA_CLIP
@@ -183,19 +192,66 @@ items:
     
     # Realistically, I would prefer this to be a larger/heavier charge, like high explosives is or worse, with the blaster bomb's radius and damage, But I need a sprite for that.
     # As is, It is worse than an alien grenade, and merely has double damage to terrain, so matches a blaster bomb's ability to breach UFO heat shield.
-  - type: STR_BREACHING_CHARGE
-    size: 0.2
-    #costBuy: 2500
-    costSell: 17500
-    weight: 7
-    bigSprite: 36
-    floorSprite: 36
-    power: 100 # 200
-    damageAlter:
-      ToTile: 1 # 0.5
-    damageType: 3
-    battleType: 4
-    invWidth: 1
-    invHeight: 2
-    blastRadius: 5 # 10
-    listorder: 4101
+    
+#  - type: STR_BLASTER_LAUNCHER
+#    requires:
+#      - STR_BLASTER_LAUNCHER
+#    size: 0.3
+#    costSell: 144000
+#    weight: 16
+#    bigSprite: 35
+#    floorSprite: 34
+#    handSprite: 56
+#    bulletSprite: 10
+#    fireSound: 53
+#    compatibleAmmo:
+#      - STR_BLASTER_BOMB
+#    accuracyAimed: 120
+#    tuAimed: 66
+#    battleType: 1
+#    twoHanded: true
+#    waypoints: 9
+#    invWidth: 2
+#    invHeight: 3
+#    recoveryPoints: 5
+#    armor: 40
+    
+  - type: STR_BLASTER_BOMB
+#    requires:
+#      - STR_BLASTER_BOMB
+#    size: 0.2
+#    costSell: 17028
+#    weight: 3
+#    bigSprite: 36
+#    floorSprite: 35
+#    hitSound: 0
+#    hitAnimation: 0
+#    power: 200
+    tuPrime: 75 # 0
+#    damageType: 3
+#    clipSize: 1
+    battleType: 4 # 2 Grenade, was ammo
+    fuseType: 2
+    fuseTriggerEvents:
+      throwTrigger: true
+#    invWidth: 1
+#    invHeight: 2
+#    recoveryPoints: 1
+#    blastRadius: 10
+    
+#  - type: STR_BREACHING_CHARGE
+#    size: 0.2
+#    #costBuy: 2500
+#    costSell: 17500
+#    weight: 7
+#    bigSprite: 36
+#    floorSprite: 36
+#    power: 100 # 200
+#    damageAlter:
+#      ToTile: 1 # 0.5
+#    damageType: 3
+#    battleType: 4
+#    invWidth: 1
+#    invHeight: 2
+#    blastRadius: 5 # 10
+#    listorder: 4101

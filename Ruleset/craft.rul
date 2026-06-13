@@ -108,7 +108,7 @@ crafts:
 #    weapons: 1
 #    soldiers: 12
 #    refuelItem: STR_ELERIUM_115
-    refuelRate: 10 # 5
+    refuelRate: 10 # 5  # Fuel per elerium, per half hour 40/10 -> 4 elerium total.
 #    score: 300
   - type: STR_FIRESTORM
     fuelMax: 30 # 20
@@ -117,7 +117,7 @@ crafts:
     accel: 12 # 9
 #    weapons: 2
 #    refuelItem: STR_ELERIUM_115
-#    refuelRate: 5
+#    refuelRate: 5 # 6 elerium
 #    score: 250
   - type: STR_AVENGER
     fuelMax: 60
@@ -128,7 +128,7 @@ crafts:
 #    soldiers: 26
 #    vehicles: 4
 #    refuelItem: STR_ELERIUM_115
-#    refuelRate: 5 # Fuel per item, per half hour
+#    refuelRate: 5 # 12 elerium
 #    score: 400
 #    spacecraft: true
     
@@ -137,8 +137,8 @@ ufos:
   - type: STR_SMALL_SCOUT
     damageMax: 50
     speedMax: 2200
-    power: 0
-    range: 0
+    power: 0 # 0
+    range: 0 # 0
     reload: 56
 #    breakOffTime: 200
 #    score: 50

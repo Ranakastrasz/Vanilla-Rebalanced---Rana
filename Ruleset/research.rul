@@ -22,10 +22,11 @@
 # ToDo - Re-add GetOneFree stuff.
 # You need the specific rank of an alien, not the generic lookup to progress, so medics unlocking doesn't matter.
 # And engineers can safely unlock UFO mission/crafts.
-_get_one_free_templates:
-  - &NAVIGATOR_UNLOCK_T1 [STR_ALIEN_RESEARCH, STR_ALIEN_HARVEST, STR_ALIEN_ABDUCTION]
-  - &NAVIGATOR_UNLOCK_T2 [STR_ALIEN_RESEARCH, STR_ALIEN_HARVEST, STR_ALIEN_ABDUCTION, STR_ALIEN_TERROR, STR_ALIEN_RETALIATION]
-  - &NAVIGATOR_UNLOCK_T3 [STR_ALIEN_RESEARCH, STR_ALIEN_HARVEST, STR_ALIEN_ABDUCTION, STR_ALIEN_TERROR, STR_ALIEN_RETALIATION, STR_ALIEN_SUPPLY, STR_ALIEN_INFILTRATION, STR_ALIEN_BASE]
+
+#_get_one_free_templates:
+#  - &NAVIGATOR_UNLOCK_T1 [STR_ALIEN_RESEARCH, STR_ALIEN_HARVEST, STR_ALIEN_ABDUCTION]
+#  - &NAVIGATOR_UNLOCK_T2 [STR_ALIEN_RESEARCH, STR_ALIEN_HARVEST, STR_ALIEN_ABDUCTION, STR_ALIEN_TERROR, STR_ALIEN_RETALIATION]
+#  - &NAVIGATOR_UNLOCK_T3 [STR_ALIEN_RESEARCH, STR_ALIEN_HARVEST, STR_ALIEN_ABDUCTION, STR_ALIEN_TERROR, STR_ALIEN_RETALIATION, STR_ALIEN_SUPPLY, STR_ALIEN_INFILTRATION, STR_ALIEN_BASE]
 
 #  - &MEDIC_UNLOCK # Not quite sure. Do we say, <Tier, <= Tier, or what? At minimum, Terrorists must be included.
 #    - STR_SECTOID      # T1
@@ -198,12 +199,12 @@ research:
   - name: STR_BLASTER_BOMB
     dependencies:
       - STR_ELERIUM_115
-      - STR_BLASTER_LAUNCHER
+#      - STR_BLASTER_LAUNCHER
   - name: STR_BLASTER_LAUNCHER
     dependencies:
       - STR_ETHEREAL_COMMANDER
-    unlocks:
-      - STR_BLASTER_BOMB
+#    unlocks:
+#      - STR_BLASTER_BOMB
   - name: STR_PSI_AMP
     dependencies:
       - STR_ETHEREAL_COMMANDER
@@ -264,7 +265,7 @@ research:
       - STR_MIND_PROBE
       - STR_SMALL_LAUNCHER
   - name: STR_SECTOID_NAVIGATOR
-    getOneFree: *NAVIGATOR_UNLOCK_T1
+    getOneFree: [] #*NAVIGATOR_UNLOCK_T1
     dependencies:
       - STR_SECTOID_AUTOPSY
     unlocks:
@@ -312,7 +313,7 @@ research:
     unlocks:
       - STR_SMALL_LAUNCHER
   - name: STR_FLOATER_NAVIGATOR
-    getOneFree: *NAVIGATOR_UNLOCK_T1
+    getOneFree: [] #*NAVIGATOR_UNLOCK_T1
     dependencies:
       - STR_FLOATER_AUTOPSY
     unlocks:
@@ -349,7 +350,7 @@ research:
       - STR_SOLDIER_TIER1
       - STR_SOLDIER_TIER2
   - name: STR_SNAKEMAN_NAVIGATOR
-    getOneFree: *NAVIGATOR_UNLOCK_T2
+    getOneFree: [] #*NAVIGATOR_UNLOCK_T2
     dependencies:
       - STR_SNAKEMAN_AUTOPSY
     unlocks:
@@ -396,12 +397,14 @@ research:
       - STR_MUTON_AUTOPSY
   - name: STR_MUTON_ENGINEER
     getOneFree: []
+    dependencies:
+      - STR_MUTON_AUTOPSY
     unlocks:
       - STR_ENGINEER_TIER1
       - STR_ENGINEER_TIER2
       - STR_ENGINEER_TIER3
   - name: STR_MUTON_NAVIGATOR
-    getOneFree: *NAVIGATOR_UNLOCK_T3
+    getOneFree: [] #*NAVIGATOR_UNLOCK_T3
     dependencies:
       - STR_MUTON_AUTOPSY
     unlocks:
@@ -567,8 +570,10 @@ ufopaedia:
   - id: STR_MOTION_SCANNER
     requires: []
     
-  - id: STR_BREECH_CHARGE
-    type_id: 4
-    section: STR_WEAPONS_AND_EQUIPMENT
-    text: STR_BREECH_CHARGE_UFOPEDIA
-    listOrder: 4101
+#  - id: STR_BREACHING_CHARGE
+#    requires:
+#      - STR_BLASTER_BOMB
+#    type_id: 4
+#    section: STR_WEAPONS_AND_EQUIPMENT
+#    text: STR_BREACHING_CHARGE_UFOPEDIA
+#    listOrder: 4101
