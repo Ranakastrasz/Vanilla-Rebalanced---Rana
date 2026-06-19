@@ -126,8 +126,8 @@ items:
 #    size: 0.3
     weight: 22 # 18
 #    power: 85
-    damageAlter:
-      ToTile: 0.70 # 0.5 # Can breach Inner Wall.
+#    damageAlter:
+#      ToTile: 0.70 # 0.5 # Can breach Inner Wall.
     accuracySnap: 75    # 50
     accuracyAimed: 115  # 84
 #    tuSnap: 33
@@ -169,15 +169,15 @@ items:
 #    accuracyAuto: 30
 #    accuracySnap: 60
 #    accuracyAimed: 95
-    tuAuto: 0 #35 # Autofire removed mostly to make it a specialized weapon, but also because with 6(18) ammo instead of 35(105), aliens burn though it a bit too fast. Its a slightly faster Sonic cannon from TFTD I suppose.
-    tuSnap: 35 #30
+    tuAuto: 55 # 35
+    tuSnap: 35 # 30
     #tuAimed: 60
   - type: STR_HEAVY_PLASMA_CLIP
     size: 0.2 # 0.3 # Vanilla bug, incorrect storage size.
     weight: 5 # 3
 #    power: 115
-    damageAlter:
-      ToTile: 0.625 # 0.5 # Can breach Heat shield.
+#    damageAlter:
+#      ToTile: 0.625 # 0.5 # Can breach Heat shield.
     clipSize: 6 # 35
   - type: HOVERTANK_CORPSE_1
     size: 6
@@ -189,6 +189,8 @@ items:
     transferTime: 96
     costSell: 90000
     recover: true
+    
+    # I may or may not re-add the blaster-grenade option. Or make BlasterLaunchers demand Psionics. Not sure right now
     
     # Realistically, I would prefer this to be a larger/heavier charge, like high explosives is or worse, with the blaster bomb's radius and damage, But I need a sprite for that.
     # As is, It is worse than an alien grenade, and merely has double damage to terrain, so matches a blaster bomb's ability to breach UFO heat shield.
@@ -216,7 +218,7 @@ items:
 #    recoveryPoints: 5
 #    armor: 40
     
-  - type: STR_BLASTER_BOMB
+#  - type: STR_BLASTER_BOMB
 #    requires:
 #      - STR_BLASTER_BOMB
 #    size: 0.2
@@ -227,13 +229,13 @@ items:
 #    hitSound: 0
 #    hitAnimation: 0
 #    power: 200
-    tuPrime: 75 # 0
+#    tuPrime: 75 # 0
 #    damageType: 3
 #    clipSize: 1
-    battleType: 4 # 2 Grenade, was ammo
-    fuseType: 2
-    fuseTriggerEvents:
-      throwTrigger: true
+#    battleType: 4 # 2 Grenade, was ammo
+#    fuseType: 2
+#    fuseTriggerEvents:
+#      throwTrigger: true
 #    invWidth: 1
 #    invHeight: 2
 #    recoveryPoints: 1
